@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 
+import Link from "next/link";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
         />
       </div>
       <p className="text-2xl font-bold">Welcome to my Blog</p>
+      <Link href="/blog">Blog</Link>
     </main>
   );
 }
