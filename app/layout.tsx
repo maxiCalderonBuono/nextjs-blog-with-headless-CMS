@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
+import MainNavBar from "~/components/MainNavBar";
+import localFont from "next/font/local";
 
-const inter = Inter({
-  subsets: ["latin"],
+// const inter = Inter({
+//   subsets: ["latin"],
+//   variable: "--font-inter",
+// });
+
+const inter = localFont({
+  src: "../public/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
   display: "swap",
 });
@@ -59,8 +66,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body>{children}</body>
+    <html lang="es" className={`${inter.variable}`}>
+      <body>
+        <MainNavBar />
+        {children}
+      </body>
     </html>
   );
 }

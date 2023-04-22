@@ -2,7 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import getAllPosts from "~/lib/getAllPosts";
 import { Post } from "~/types";
-import Article from "~/components/article";
+import Article from "~/components/Article";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -18,12 +19,12 @@ export default async function BlogPage() {
   const posts = postsData.data;
 
   return (
-    <main>
-      <h2>Blog</h2>
-
+    <main className="max-w-5xl py-10 mx-auto">
       <ul>
         {posts.map((post) => (
-          <Article key={post.id} attributes={post.attributes} />
+          <Link href="blog/posts/3" key={post.id}>
+            <Article attributes={post.attributes} />
+          </Link>
         ))}
       </ul>
     </main>
