@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
 import "./globals.css";
 import MainNavBar from "~/components/MainNavBar";
 import localFont from "next/font/local";
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-inter",
-// });
 
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
@@ -17,15 +11,15 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Andrés Marcelo Esquivel",
-    template: "%s | Andrés Marcelo Esquivel",
+    default: "Mindenkié",
+    template: "%s | Mindenkié",
   },
-  description: "Político y escritor.",
+  description: "Politica, economía y sociedad.",
   openGraph: {
-    title: "Andrés Marcelo Esquivel",
-    description: "Político y escritor.",
+    title: "Mindenkié",
+    description: "Politica, economía y sociedad.",
     // url: "https://leerob.io",
-    siteName: "Andrés Marcelo Esquivel",
+    siteName: "Mindenkié",
     images: [
       {
         url: "https://leerob.io/og.jpg",
@@ -48,7 +42,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Andrés Marcelo Esquivel",
+    title: "Mindenkié",
     card: "summary_large_image",
   },
   icons: {

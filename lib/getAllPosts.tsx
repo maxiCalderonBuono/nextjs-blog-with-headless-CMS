@@ -1,5 +1,3 @@
-import { Data } from "~/types";
-
 const url = "http://127.0.0.1:1337/api/blogs?populate=deeep";
 
 export default async function getAllPosts() {

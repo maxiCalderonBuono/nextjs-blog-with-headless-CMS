@@ -13,6 +13,7 @@ export interface PostAttributes {
   description: string;
   content: string;
   image: Image;
+  filter: string;
 }
 
 export interface Image {
