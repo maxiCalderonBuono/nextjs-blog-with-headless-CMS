@@ -1,13 +1,12 @@
+import Article from "~/components/Article";
 import getAllPosts from "~/lib/getAllPosts";
 
-export default function Home() {
-  // const { data: posts } = await getAllPosts();
+export default async function Home() {
+  const { data: posts } = await getAllPosts();
 
-  // console.log(posts);
+  console.log(posts);
 
   return (
-    <main className="flex items-center min-h-[calc(100vh-108px)] justify-evenly">
-      Holis
-    </main>
+    <main className="flex min-h-[calc(100vh-108px)] justify-evenly">Holis</main>
   );
 }

@@ -17,7 +17,7 @@ const MainNavBar = () => {
           <Link href="/blog" className="hidden text-xl sm:inline-block">
             Blog
           </Link>
-          <Link href="/blog" className="hidden text-xl sm:inline-block">
+          <Link href="/about" className="hidden text-xl sm:inline-block">
             About
           </Link>
         </div>

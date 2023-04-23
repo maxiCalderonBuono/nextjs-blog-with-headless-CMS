@@ -26,7 +26,7 @@ const Dropdown = () => {
         <Link href="/blog" className="text-xl">
           Blog
         </Link>
-        <Link href="/blog" className="text-xl ">
+        <Link href="/about" className="text-xl ">
           About
         </Link>
       </ul>
