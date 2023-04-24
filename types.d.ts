@@ -68,3 +68,5 @@ export interface ProviderMetadata {
   public_id: string;
   resource_type: string;
 }
+
+export type Filter = null | ((post: Post) => boolean);

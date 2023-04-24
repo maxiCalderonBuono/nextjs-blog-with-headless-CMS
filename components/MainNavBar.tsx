@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Baseline, Moon, Sun } from "lucide-react";
+import { Baseline } from "lucide-react";
 import Link from "next/link";
 import ToggleMode from "./ToggleMode";
 import Dropdown from "./Dropdown";
 
 const MainNavBar = () => {
   return (
-    <nav className="py-4 shadow-lg">
+    <nav className="px-5 py-4 shadow-lg">
       <div className="flex justify-between max-w-5xl mx-auto">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
