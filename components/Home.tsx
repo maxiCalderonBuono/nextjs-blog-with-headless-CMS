@@ -16,16 +16,14 @@ const Home = ({ data: res }: HompeProps) => {
 
   const { data: posts } = res;
 
-  console.log(posts);
-
   return (
-    <div>
-      <Tabs
+    <div className="w-full max-w-4xl ">
+      {/* <Tabs
         posts={posts}
         onChange={(filter: Filter) =>
           setFilters((filters) => ({ ...filters, category: filter }))
         }
-      />
+      /> */}
       <PostList posts={posts} />
     </div>
   );

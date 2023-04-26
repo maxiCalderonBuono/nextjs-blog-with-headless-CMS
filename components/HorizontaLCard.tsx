@@ -10,9 +10,9 @@ interface ArticleProps {
 }
 const HorizontalCard = ({ attributes }: ArticleProps) => {
   return (
-    <div className="relative rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]">
-      <Link href="/home">
-        <div className="flex-col justify-between group hero-content md:flex-row">
+    <Link href="/">
+      <div className="relative rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] w-full">
+        <div className="flex flex-col justify-between px-2 py-5 group hero-content md:flex-row">
           <div className="flex flex-col items-center gap-5 md:flex-row">
             {attributes.image && (
               <div className="relative w-64 h-24">
@@ -25,31 +25,29 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
               </div>
             )}
             <div className="w-full grow">
-              <h1 className="text-xl font-bold group-hover:text-indigo-300">
-                {attributes.title}
+              <div className="flex gap-3">
+                <h1 className="text-2xl font-bold group-hover:text-indigo-300">
+                  {attributes.title}
+                </h1>
                 {attributes.filter && (
-                  <div className="mx-2 text-sm uppercase badge badge-secondary">
+                  <span className="bg-indigo-100 h-fit uppercase text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-indigo-100 border border-indigo-400">
                     {attributes.filter}
-                  </div>
+                  </span>
                 )}
-              </h1>
+              </div>
+
               <p className="py-1 text-1xl">{attributes.description}</p>
             </div>
           </div>
           <div className="flex flex-col">
-            {/* {attributes.createdAt && (
-                <div className="badge badge-outline">
-                  {attributes.createdAt}
-                </div>
-              )} */}
             <TimeAgo timeStamp={attributes.createdAt} />
-            <span className="absolute flex self-end text-sm text-indigo-300 align-bottom transition-opacity delay-150 opacity-0 bottom-3 right-3 group-hover:opacity-100">
+            <span className="absolute flex self-end text-sm font-bold text-indigo-300 align-bottom transition-opacity delay-150 opacity-0 bottom-3 right-3 group-hover:opacity-100">
               Read more <ArrowRight />
             </span>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
