@@ -9,6 +9,7 @@ type Props = {
 };
 
 const Tabs: React.FC<Props> = ({ posts, onChange }) => {
+  console.log(posts);
   const [selected, setSelect] = useState<Set<string>>(() => new Set());
 
   const tabs = useMemo(() => {
