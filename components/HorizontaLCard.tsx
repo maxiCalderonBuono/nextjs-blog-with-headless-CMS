@@ -13,18 +13,18 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
     <Link href="/">
       <div className="relative rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] w-full">
         <div className="flex flex-col justify-between px-2 py-5 group hero-content md:flex-row">
-          <div className="flex flex-col items-center gap-5 md:flex-row">
+          <div className="flex flex-col items-center gap-5 md:flex-row grow">
             {attributes.image && (
-              <div className="relative w-64 h-24">
+              <div className="relative w-64 h-24 grow">
                 <Image
                   src={attributes.image.data.attributes.formats.thumbnail.url}
                   fill
                   alt={attributes.title}
-                  className="max-w-full md:max-w-[13rem] rounded-lg"
+                  className="rounded-lg"
                 />
               </div>
             )}
-            <div className="w-full grow">
+            <div className="w-full">
               <div className="flex gap-3">
                 <h1 className="text-2xl font-bold group-hover:text-indigo-300">
                   {attributes.title}

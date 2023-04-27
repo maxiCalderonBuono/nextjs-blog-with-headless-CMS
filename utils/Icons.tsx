@@ -22,7 +22,9 @@ export const ClosedMenu = ({ mode }: { mode?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className={`w-[26px] h-[26px] stroke-current block  ${mode}`}
+    fill="none"
+    stroke="currentColor"
+    className={`w-[26px] h-[26px] stroke-current ${mode}`}
   >
     <path
       strokeLinecap="round"
@@ -41,7 +43,7 @@ export const OpenMenu = ({ mode }: { mode?: string }) => (
     strokeLinecap="round"
     strokeLinejoin="round"
     strokeWidth="2"
-    className={`w-[26px] h-[26px] stroke-current block  ${mode}`}
+    className={`w-[26px] h-[26px] stroke-current ${mode}`}
     viewBox="0 0 24 24"
   >
     <path d="M18 6L6 18" />

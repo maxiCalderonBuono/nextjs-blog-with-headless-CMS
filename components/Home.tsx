@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Filter, Post, Response } from "~/types";
 import Tabs from "~/components/Tabs";
 import PostList from "./PostList";
+import Grid from "./Grid";
 
 interface HompeProps {
   data: Response;
@@ -18,12 +19,13 @@ const Home = ({ data: res }: HompeProps) => {
 
   return (
     <div className="w-full max-w-4xl ">
-      {/* <Tabs
+      <Tabs
         posts={posts}
         onChange={(filter: Filter) =>
           setFilters((filters) => ({ ...filters, category: filter }))
         }
-      /> */}
+      />
+      <Grid posts={posts} />
       <PostList posts={posts} />
     </div>
   );
