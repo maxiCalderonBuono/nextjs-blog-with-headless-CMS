@@ -9,6 +9,8 @@ const ToggleMode = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
+  console.log(enabled);
+
   return (
     <div className="relative flex items-center w-[26px] h-[26px]">
       <Switch
@@ -19,13 +21,17 @@ const ToggleMode = () => {
       >
         <Sun
           mode={`transition transform absolute top-0 left-0 ${
-            enabled ? "rotate-0 opacity-100" : "rotate-90 opacity-0"
+            currentTheme === "light"
+              ? "rotate-0 opacity-0"
+              : "rotate-90 opacity-100"
           }`}
         />
 
         <Moon
           mode={`transition transform absolute top-0 left-0 ${
-            enabled ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+            currentTheme === "light"
+              ? "rotate-0 opacity-100"
+              : "rotate-90 opacity-0"
           }`}
         />
       </Switch>

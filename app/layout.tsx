@@ -3,6 +3,7 @@ import "./globals.css";
 import MainNavBar from "~/components/MainNavBar";
 import localFont from "next/font/local";
 import ThemeProvider from "~/components/ThemeProvider";
+import SiteFooter from "~/components/SiteFooter";
 
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.ttf",
@@ -66,6 +67,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <MainNavBar />
           {children}
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>

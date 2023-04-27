@@ -1,6 +1,7 @@
 export const Sun = ({ mode }: { mode?: string }) => (
   <svg
-    className={`w-[26px] h-[26px] fill-current ${mode}`}
+    className={`w-[26px] h-[26px] ${mode}`}
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
   >
@@ -10,7 +11,8 @@ export const Sun = ({ mode }: { mode?: string }) => (
 
 export const Moon = ({ mode }: { mode?: string }) => (
   <svg
-    className={`w-[26px] h-[26px] fill-current  ${mode}`}
+    className={`w-[26px] h-[26px] ${mode}`}
+    fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
   >
@@ -48,5 +50,23 @@ export const OpenMenu = ({ mode }: { mode?: string }) => (
   >
     <path d="M18 6L6 18" />
     <path d="M6 6L18 18" />
+  </svg>
+);
+
+export const Copyright = ({ mode }: { mode?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="2"
+    className={`stroke-current ${mode}`}
+    viewBox="0 0 24 24"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <path d="M15 9.354a4 4 0 100 5.292" />
   </svg>
 );
