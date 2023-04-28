@@ -1,7 +1,7 @@
 "use client";
 
 import { Tab } from "@headlessui/react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Filter, Post } from "~/types";
 
 type Props = {
@@ -10,11 +10,8 @@ type Props = {
 };
 
 const Tabs: React.FC<Props> = ({ posts, onChange }) => {
-  console.log(posts);
-  const [selected, setSelect] = useState<Set<string>>(() => new Set());
-
   const tabs = useMemo(() => {
-    const buffer: Set<string> = new Set();
+    const buffer: Set<string> = new Set(["Todas"]);
 
     for (const post of posts) {
       buffer.add(post.attributes.filter);
@@ -22,31 +19,32 @@ const Tabs: React.FC<Props> = ({ posts, onChange }) => {
     return Array.from(buffer);
   }, [posts]);
 
-  function handleChange(tab: string, isSelected: boolean) {
-    const draft = structuredClone(selected);
-
-    if (isSelected) {
-      draft;
-    }
+  function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(" ");
   }
 
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
+  function handleOnChange(index: number) {
+    const filter =
+      tabs[index] === "Todas"
+        ? null
+        : (post: Post) => post.attributes.filter === tabs[index];
+
+    onChange(filter);
   }
 
   return (
     <div className="w-full px-2 py-16 sm:px-0">
-      <Tab.Group>
+      <Tab.Group onChange={(index) => handleOnChange(index)}>
         <Tab.List className="flex p-1 space-x-1 rounded-xl bg-gray-600/20">
           {tabs.map((tab) => (
             <Tab
               key={tab}
               className={({ selected }) =>
                 classNames(
-                  "w-full rounded-lg py-2.5 text-sm  leading-5 text-white flex-1 uppercase font-bold",
+                  "w-full rounded-lg py-2.5 text-sm  leading-5 dark:text-white text-gray-700 flex-1 uppercase font-bold",
                   " ring-opacity-60 ring-offset-2 dark:ring-offset-blue-400 ring-offset-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700",
                   selected
-                    ? "bg-gray-600/50 shadow"
+                    ? "bg-gray-600/50 shadow text-gray-800"
                     : "dark:text-indigo-500 text-gray-800 hover:bg-white/[0.12] dark:hover:text-indigo-300 hover:text-gray-600"
                 )
               }

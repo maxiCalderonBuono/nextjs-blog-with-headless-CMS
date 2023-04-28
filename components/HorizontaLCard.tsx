@@ -42,7 +42,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
           <div className="flex flex-col">
             <TimeAgo timeStamp={attributes.createdAt} />
             <span className="absolute flex self-end text-sm font-bold text-indigo-300 align-bottom transition-opacity delay-150 opacity-0 bottom-3 right-3 group-hover:opacity-100">
-              Read more <ArrowRight />
+              Leer más <ArrowRight />
             </span>
           </div>
         </div>

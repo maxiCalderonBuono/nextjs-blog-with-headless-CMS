@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Filter, Post, Response } from "~/types";
 import Tabs from "~/components/Tabs";
 import PostList from "./PostList";
@@ -17,6 +17,20 @@ const Home = ({ data: res }: HompeProps) => {
 
   const { data: posts } = res;
 
+  const matches = useMemo(() => {
+    const filtersToApply = Object.values(filters).filter(Boolean);
+
+    let matches = posts;
+
+    for (let filter of filtersToApply) {
+      if (filter) {
+        matches = matches.filter(filter);
+      }
+    }
+
+    return matches;
+  }, [filters, posts]);
+
   return (
     <div className="w-full max-w-5xl ">
       <Tabs
@@ -25,8 +39,8 @@ const Home = ({ data: res }: HompeProps) => {
           setFilters((filters) => ({ ...filters, category: filter }))
         }
       />
-      <Grid posts={posts} />
-      <PostList posts={posts} />
+      <Grid posts={matches} />
+      <PostList posts={matches} />
     </div>
   );
 };

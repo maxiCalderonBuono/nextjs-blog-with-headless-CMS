@@ -2,6 +2,7 @@ import React from "react";
 import { Post } from "~/types";
 import HorizontalCard from "./HorizontaLCard";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface PostListProps {
   posts: Post[];
@@ -17,9 +18,12 @@ const PostList = ({ posts }: PostListProps) => {
           <div className="my-0 divider-gray-800 divider" />
         </div>
       ))}
-      <button className="flex justify-end w-full py-5 font-bold ¿ text-indigo-400 text-md">
-        Leer más <ArrowRight />
-      </button>
+      <Link
+        href="/blog"
+        className="flex justify-end w-full py-5 font-bold ¿ text-indigo-400 text-md hover:scale-[102%]"
+      >
+        Más <ArrowRight />
+      </Link>
     </section>
   );
 };

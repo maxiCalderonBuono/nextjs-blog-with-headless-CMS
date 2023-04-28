@@ -9,8 +9,6 @@ const ToggleMode = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  console.log(enabled);
-
   return (
     <div className="relative flex items-center w-[26px] h-[26px]">
       <Switch
