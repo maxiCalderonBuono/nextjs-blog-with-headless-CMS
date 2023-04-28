@@ -18,7 +18,7 @@ const Home = ({ data: res }: HompeProps) => {
   const { data: posts } = res;
 
   return (
-    <div className="w-full max-w-4xl ">
+    <div className="w-full max-w-5xl ">
       <Tabs
         posts={posts}
         onChange={(filter: Filter) =>

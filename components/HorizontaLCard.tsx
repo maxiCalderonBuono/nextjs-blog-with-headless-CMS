@@ -11,7 +11,7 @@ interface ArticleProps {
 const HorizontalCard = ({ attributes }: ArticleProps) => {
   return (
     <Link href="/">
-      <div className="relative rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%] w-full">
+      <div className="relative rounded-lg bg-base-100 hover:shadow-xl dark:shadow-gray-800 transition ease-in-out hover:scale-[102%] w-full">
         <div className="flex flex-col justify-between px-2 py-5 group hero-content md:flex-row">
           <div className="flex flex-col items-center gap-5 md:flex-row grow">
             {attributes.image && (
@@ -20,7 +20,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                   src={attributes.image.data.attributes.formats.thumbnail.url}
                   fill
                   alt={attributes.title}
-                  className="rounded-lg"
+                  className="hidden rounded-lg md:block"
                 />
               </div>
             )}
@@ -30,7 +30,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                   {attributes.title}
                 </h1>
                 {attributes.filter && (
-                  <span className="bg-indigo-100 h-fit uppercase text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-indigo-100 border border-indigo-400">
+                  <span className="bg-indigo-100 h-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 dark:text-indigo-100 border border-indigo-400">
                     {attributes.filter}
                   </span>
                 )}

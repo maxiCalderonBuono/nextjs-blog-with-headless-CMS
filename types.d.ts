@@ -19,6 +19,7 @@ export interface PostAttributes {
   content: string;
   image: Image;
   filter: string;
+  quote: string;
 }
 
 export interface Image {

@@ -2,9 +2,10 @@ import { formatDistanceToNow, parseISO } from "date-fns";
 
 interface TimeProps {
   timeStamp: string;
+  style?: string;
 }
 
-export const TimeAgo = ({ timeStamp }: TimeProps) => {
+export const TimeAgo = ({ timeStamp, style }: TimeProps) => {
   let timeAgo = "";
   if (timeStamp) {
     const date = parseISO(timeStamp);
@@ -13,8 +14,8 @@ export const TimeAgo = ({ timeStamp }: TimeProps) => {
   }
 
   return (
-    <span title={timeStamp} className="grow">
-      &nbsp; <i>{timeAgo}</i>
+    <span title={timeStamp} className={`grow ${style}`}>
+      <i>{timeAgo}</i>
     </span>
   );
 };

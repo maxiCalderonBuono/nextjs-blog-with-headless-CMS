@@ -8,8 +8,8 @@ const SiteFooter = () => {
   const currentDate = new Date();
   const currentYear = getYear(currentDate);
   return (
-    <footer className="flex items-center justify-between max-w-6xl py-10 mx-auto">
-      <div className="flex items-center gap-1">
+    <footer className="flex flex-col items-center justify-between max-w-6xl py-10 mx-auto md:flex-row">
+      <div className="flex flex-col items-center gap-1 md:flex-row">
         <Baseline />
         <span>{currentYear}</span>
         <Copyright />
