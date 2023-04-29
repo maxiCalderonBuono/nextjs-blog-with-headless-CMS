@@ -14,7 +14,7 @@ export const TimeAgo = ({ timeStamp, style }: TimeProps) => {
   }
 
   return (
-    <span title={timeStamp} className={`grow ${style}`}>
+    <span title={timeStamp} className={` ${style}`}>
       <i>{timeAgo}</i>
     </span>
   );

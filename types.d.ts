@@ -20,6 +20,7 @@ export interface PostAttributes {
   image: Image;
   filter: string;
   quote: string;
+  slug: string;
 }
 
 export interface Image {

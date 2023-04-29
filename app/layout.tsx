@@ -13,7 +13,7 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mindenkié",
+    default: "Mindenkié - Bienvenidos a tod@s",
     template: "%s | Mindenkié",
   },
   description: "Politica, economía y sociedad.",

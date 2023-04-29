@@ -13,8 +13,8 @@ const MainNavBar = () => {
             <Baseline />
             <span className="text-lg font-bold ">Mindenkié</span>
           </Link>
-          <Link href="/blog" className="hidden text-lg sm:inline-block">
-            Blog
+          <Link href="/posts" className="hidden text-lg sm:inline-block">
+            Posts
           </Link>
           <Link href="/about" className="hidden text-lg sm:inline-block">
             About

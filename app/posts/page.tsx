@@ -2,8 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import getAllPosts from "~/lib/getAllPosts";
 import { Post } from "~/types";
-import Article from "~/components/HorizontaLCard";
-import Link from "next/link";
+import PostList from "~/components/PostList";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -14,5 +13,11 @@ interface PostData {
 }
 
 export default async function BlogPage() {
-  return <main className="max-w-5xl py-10 mx-auto">Holis</main>;
+  const data = await getAllPosts();
+  const { data: posts } = data;
+  return (
+    <main className="max-w-5xl py-10 mx-auto">
+      <PostList posts={posts} />
+    </main>
+  );
 }
