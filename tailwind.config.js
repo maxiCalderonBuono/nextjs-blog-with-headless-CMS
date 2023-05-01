@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-heading)", ...fontFamily.sans],
       },
       animation: {
         toggle: "toggle 3s ease-in-out",

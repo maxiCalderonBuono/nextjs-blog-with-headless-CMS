@@ -41,7 +41,7 @@ export const Card = ({ attributes, index }: ArticleProps) => {
       {attributes.createdAt && (
         <TimeAgo style="opacity-60" timeStamp={attributes.createdAt} />
       )}
-      <Link href={`/posts/${attributes.slug}}`} className="absolute inset-0">
+      <Link href={`/posts/${attributes.slug}`} className="absolute inset-0">
         <span className="sr-only">Leer post</span>
       </Link>
     </article>

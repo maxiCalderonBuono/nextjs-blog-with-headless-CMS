@@ -6,9 +6,14 @@ import ThemeProvider from "~/components/ThemeProvider";
 import SiteFooter from "~/components/SiteFooter";
 
 const inter = localFont({
-  src: "../public/fonts/Inter-Regular.ttf",
+  src: "../assets/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
   display: "swap",
+});
+
+const fontHeading = localFont({
+  src: "../assets/fonts/CalSans-SemiBold.woff2",
+  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -62,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${inter.variable}`}>
+    <html lang="es" className={`${inter.variable} ${fontHeading.variable}`}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <MainNavBar />

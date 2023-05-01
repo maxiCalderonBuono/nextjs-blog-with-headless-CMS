@@ -10,12 +10,12 @@ interface ArticleProps {
 }
 const HorizontalCard = ({ attributes }: ArticleProps) => {
   return (
-    <Link href={`/posts/${attributes.slug}}`}>
+    <Link href={`/posts/${attributes.slug}`}>
       <div className="relative rounded-lg bg-base-100 hover:shadow-xl dark:shadow-gray-800 transition  ease-in-out hover:scale-[102%] w-full">
         <div className="flex flex-col w-full gap-3 px-2 py-5 overflow-hidden group hero-content md:flex-row">
           <div className="w-1/5">
             {attributes.image && (
-              <div className="relative w-full h-24 grow">
+              <div className="relative w-[95%] h-24 grow">
                 <Image
                   src={attributes.image.data.attributes.formats.thumbnail.url}
                   fill
