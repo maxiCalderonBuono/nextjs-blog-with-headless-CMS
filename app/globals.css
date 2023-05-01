@@ -16,5 +16,8 @@
   }
 }
 
-body {
+@layer components {
+  .cms-content > p {
+    @apply mt-12;
+  }
 }

@@ -5,6 +5,7 @@ import { formatDate } from "~/lib/formatedDate";
 import getPostBySlug from "~/lib/getPostBySlug";
 import { Post } from "~/types";
 import profile from "../../../assets/images/profile.png";
+import ReactMarkdown from "react-markdown";
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
@@ -59,11 +60,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </div>
       )}
       <hr className="mt-12" />
-      <p className="my-3 italic text-gray-100 text-md font-heading lg:text-xl">
-        {attributes.description}
-      </p>
+      <article className="my-3 italic prose text-gray-100 text-md font-heading lg:text-xl prose-a:text-indigo-300">
+        <ReactMarkdown>{attributes.content}</ReactMarkdown>
+      </article>
       <hr />
-      <div>{attributes.content}</div>
+
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
         <Link href="/posts" className="flex items-center">
