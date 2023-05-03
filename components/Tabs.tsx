@@ -33,7 +33,7 @@ const Tabs: React.FC<Props> = ({ posts, onChange }) => {
   }
 
   return (
-    <div className="w-full px-2 my-16 shadow-xl sm:px-0 dark:shadow-gray-800">
+    <div className="px-2 my-16 shadow-xl sm:px-0 ">
       <Tab.Group onChange={(index) => handleOnChange(index)}>
         <Tab.List className="flex p-1 space-x-1 rounded-xl bg-gray-600/20">
           {tabs.map((tab) => (

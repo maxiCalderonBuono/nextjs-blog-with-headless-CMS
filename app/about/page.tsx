@@ -3,8 +3,8 @@ import Balancer from "react-wrap-balancer";
 
 const about = () => {
   return (
-    <section className="w-full max-w-5xl px-5 py-10 mx-auto md:h-[calc(100vh-166px)]">
-      <h1 className="mb-8 text-6xl font-bold text-gray-700 dark:text-indigo-300">
+    <section className="w-full max-w-5xl px-6 lg:px-5 py-10 mx-auto md:h-[calc(100vh-166px)]">
+      <h1 className="mb-8 text-5xl font-bold text-gray-700 lg:text-6xl dark:text-indigo-300">
         Mindenkié.
       </h1>
 

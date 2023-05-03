@@ -11,12 +11,13 @@ interface ArticleProps {
 export const Card = ({ attributes, index }: ArticleProps) => {
   return (
     <article className="relative flex flex-col space-y-2 group hover:scale-[102%]">
-      <div className="relative items-center justify-center mb-3 overflow-hidden transition-shadow rounded-md cursor-pointer aspect-video group hover:shadow-xl hover:opacity-40 hover:shadow-black/30">
+      <div className="items-center justify-center mb-3 overflow-hidden transition-shadow rounded-md cursor-pointer aspect-video group hover:shadow-xl hover:opacity-40 hover:shadow-black/30">
         {attributes.image && (
           <Image
-            src={attributes.image.data.attributes.formats.large?.url}
+            src={attributes.image.data.attributes.formats.small.url}
             alt={attributes.title}
-            fill
+            width={804}
+            height={452}
             className="transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 group-hover:blur-sm"
             priority={index <= 1}
           />

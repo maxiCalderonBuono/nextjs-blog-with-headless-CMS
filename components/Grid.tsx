@@ -9,7 +9,7 @@ interface PostListProps {
 const Grid = ({ posts }: PostListProps) => {
   return (
     <section className="py-4">
-      <h1 className="py-5 text-6xl font-extrabold">PRINCIPALES</h1>
+      <h1 className="py-5 text-4xl font-extrabold lg:text-6xl">PRINCIPALES</h1>
       <div className="grid gap-10 sm:grid-cols-2">
         {posts.map((post, index) => (
           <Card key={post.id} attributes={post.attributes} index={index} />

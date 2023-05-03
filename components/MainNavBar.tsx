@@ -6,12 +6,12 @@ import Dropdown from "./Dropdown";
 
 const MainNavBar = () => {
   return (
-    <nav className="px-5 py-4 shadow-lg">
+    <nav className="px-5 py-4 shadow-lg dark:bg-gray-900/70">
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center space-x-2">
             <Baseline />
-            <span className="text-lg font-bold ">Mindenkié</span>
+            <span className="text-lg font-bold">Mindenkié</span>
           </Link>
           <Link href="/posts" className="hidden text-lg sm:inline-block">
             Posts

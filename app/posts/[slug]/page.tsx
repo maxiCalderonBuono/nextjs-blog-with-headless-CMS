@@ -15,7 +15,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { attributes } = data;
 
   return (
-    <article className="container relative max-w-3xl py-6 mx-auto lg:py-10">
+    <article className="container relative max-w-2xl py-6 mx-auto lg:py-10">
       <Link
         href="/posts"
         className="absolute left-[-200px] top-14 hidden xl:inline-flex"
@@ -44,7 +44,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             className="bg-indigo-300 rounded-full"
           />
           <div className="flex-1 leading-tight text-left">
-            <p className="font-medium">El escritor</p>
+            <p className="font-medium">Sultano</p>
           </div>
         </div>
       </div>
@@ -59,12 +59,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
           />
         </div>
       )}
-      <hr className="mt-12" />
-      <article className="my-3 italic prose text-gray-100 text-md font-heading lg:text-xl prose-a:text-indigo-300">
-        <ReactMarkdown>{attributes.content}</ReactMarkdown>
-      </article>
-      <hr />
 
+      <article className="flex items-start p-4 my-6 border border-l-4 border-gray-400 rounded-md">
+        {attributes.description}
+      </article>
+      <article className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-h2:text-white prose-a:after:ml-2">
+        <ReactMarkdown linkTarget="_blank" className="after:text-indigo-300">
+          {attributes.content}
+        </ReactMarkdown>
+      </article>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
         <Link href="/posts" className="flex items-center">

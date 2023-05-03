@@ -32,7 +32,7 @@ const Home = ({ data: res }: HompeProps) => {
   }, [filters, posts]);
 
   return (
-    <div className="w-full max-w-5xl ">
+    <div className="w-full max-w-5xl px-6">
       <Tabs
         posts={posts}
         onChange={(filter: Filter) =>

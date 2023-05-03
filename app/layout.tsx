@@ -70,9 +70,11 @@ export default function RootLayout({
     <html lang="es" className={`${inter.variable} ${fontHeading.variable}`}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <MainNavBar />
-          {children}
-          <SiteFooter />
+          <main>
+            <MainNavBar />
+            {children}
+            <SiteFooter />
+          </main>
         </ThemeProvider>
       </body>
     </html>
