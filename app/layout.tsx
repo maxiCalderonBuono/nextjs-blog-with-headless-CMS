@@ -68,13 +68,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${inter.variable} ${fontHeading.variable}`}>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main>
-            <MainNavBar />
-            {children}
-            <SiteFooter />
-          </main>
+          <MainNavBar />
+          <main className="flex-grow">{children}</main>
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>

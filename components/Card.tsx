@@ -10,40 +10,38 @@ interface ArticleProps {
 
 export const Card = ({ attributes, index }: ArticleProps) => {
   return (
-    <article className="relative flex flex-col space-y-2 group hover:scale-[102%]">
-      <div className="items-center justify-center mb-3 overflow-hidden transition-shadow rounded-md cursor-pointer aspect-video group hover:shadow-xl hover:opacity-40 hover:shadow-black/30">
-        {attributes.image && (
-          <Image
-            src={attributes.image.data.attributes.formats.small.url}
-            alt={attributes.title}
-            width={804}
-            height={452}
-            className="transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125 group-hover:blur-sm"
-            priority={index <= 1}
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900 group-hover:from-black/90 group-hover:via-black/70 group-hover:to-black/90" />
-        <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-          <p className="mb-3 text-xl italic font-extrabold text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-            {attributes.quote}
-          </p>
-          <button className="rounded-full dark:bg-indigo-900 bg-indigo-300 py-2 px-3.5 font-com text-sm capitalize dark:text-white text-black shadow shadow-black/60">
-            Leer más
-          </button>
+    <article>
+      <Link
+        href={`/posts/${attributes.slug}`}
+        className="flex flex-col space-y-6 "
+      >
+        <div className="group  [perspective:1000px]">
+          <div className="relative aspect-video h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div className="absolute inset-0">
+              {attributes.image && (
+                <Image
+                  src={attributes.image.data.attributes.formats.large.url}
+                  alt={attributes.title}
+                  fill
+                  priority
+                  className="object-cover rounded-md shadow-xl shadow-black/40"
+                />
+              )}
+            </div>
+            <div className="absolute inset-0 h-full w-full rounded-md bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div className="flex flex-col items-center justify-center min-h-full">
+                <p className="text-3xl font-bold">{attributes.quote}</p>
+                <button className="px-2 py-1 mt-2 text-sm font-bold text-gray-900 bg-indigo-300 rounded-md hover:bg-indigo-400">
+                  Leer Más
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <span className="bg-indigo-100 h-fit w-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 border border-indigo-400">
-        {attributes.filter}
-      </span>
-      <h2 className="text-2xl font-extrabold">{attributes.title}</h2>
-      {attributes.description && (
-        <p className="truncate opacity-60">{attributes.description}</p>
-      )}
-      {attributes.createdAt && (
-        <TimeAgo style="opacity-60" timeStamp={attributes.createdAt} />
-      )}
-      <Link href={`/posts/${attributes.slug}`} className="absolute inset-0">
-        <span className="sr-only">Leer post</span>
+
+        <h2 className="text-2xl font-extrabold font-heading">
+          {attributes.title}
+        </h2>
       </Link>
     </article>
   );

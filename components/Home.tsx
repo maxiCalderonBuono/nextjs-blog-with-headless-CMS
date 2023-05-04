@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Filter, Post, Response } from "~/types";
+import { Filter, Response } from "~/types";
 import Tabs from "~/components/Tabs";
 import PostList from "./PostList";
 import Grid from "./Grid";
@@ -40,6 +40,7 @@ const Home = ({ data: res }: HompeProps) => {
         }
       />
       <Grid posts={matches} />
+      <h2 className="text-4xl font-bold uppercase">Continuar leyendo</h2>
       <PostList posts={matches} />
     </div>
   );
