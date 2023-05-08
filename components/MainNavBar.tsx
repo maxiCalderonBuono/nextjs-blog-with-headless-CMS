@@ -7,7 +7,7 @@ import getAllPosts from "~/lib/getAllPosts";
 import NavLinks from "./NavlLinks";
 import { Response } from "~/types";
 
-const MainNavBar = async () => {
+export default async function MainNavBar() {
   const data: Response = await getAllPosts();
 
   console.log(data);
@@ -25,11 +25,9 @@ const MainNavBar = async () => {
         </div>
         <div className="flex items-center gap-3">
           <ToggleMode />
-          <SlideOver data={data} />
+          <SlideOver posts={data} />
         </div>
       </div>
     </nav>
   );
-};
-
-export default MainNavBar;
+}
