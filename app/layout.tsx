@@ -75,6 +75,7 @@ export default async function RootLayout({
       <body className="flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FiltersProvider>
+            {/* @ts-expect-error Server Component */}
             <MainNavBar />
             <main className="flex-grow">{children}</main>
             <SiteFooter />
