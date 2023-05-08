@@ -4,7 +4,7 @@ import Home from "~/components/Home";
 const RootHome = async () => {
   const data = await getAllPosts();
   return (
-    <main className="flex flex-col items-center mx-auto min-h-[calc(100vh-108px)] justify-evenly">
+    <main className="flex flex-col mx-auto md:items-center justify-evenly">
       <Home data={data} />
     </main>
   );

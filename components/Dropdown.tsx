@@ -43,7 +43,7 @@ const Dropdown = () => {
                   <Menu.Item>
                     {({ active }) => (
                       <Link
-                        href="/posts"
+                        href="/blog"
                         className={`${
                           active
                             ? "bg-indigo-300 dark:text-black"

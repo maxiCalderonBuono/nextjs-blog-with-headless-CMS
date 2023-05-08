@@ -1,15 +1,32 @@
 "use client";
 
-import { Tab } from "@headlessui/react";
 import { useMemo } from "react";
-import { Filter, Post } from "~/types";
+import { Post } from "~/types";
+import { useFilterContext } from "./filter";
+import { CheckCircle } from "lucide-react";
 
 type Props = {
   posts: Post[];
-  onChange: (filter: Filter) => void;
+  onChange?: () => void;
 };
 
 const Tabs: React.FC<Props> = ({ posts, onChange }) => {
+  const { selectedCategory, setSelectedCategory, setFilters } =
+    useFilterContext();
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    const filter =
+      category === "Todas"
+        ? null
+        : (post: Post) => post.attributes.filter === category;
+
+    setFilters({ category: filter });
+    if (onChange) {
+      onChange();
+    }
+  };
+
   const tabs = useMemo(() => {
     const buffer: Set<string> = new Set(["Todas"]);
 
@@ -23,37 +40,27 @@ const Tabs: React.FC<Props> = ({ posts, onChange }) => {
     return classes.filter(Boolean).join(" ");
   }
 
-  function handleOnChange(index: number) {
-    const filter =
-      tabs[index] === "Todas"
-        ? null
-        : (post: Post) => post.attributes.filter === tabs[index];
-
-    onChange(filter);
-  }
-
   return (
-    <div className="px-2 my-16 shadow-xl sm:px-0 ">
-      <Tab.Group onChange={(index) => handleOnChange(index)}>
-        <Tab.List className="flex p-1 space-x-1 rounded-xl bg-gray-600/20">
-          {tabs.map((tab) => (
-            <Tab
-              key={tab}
-              className={({ selected }) =>
-                classNames(
-                  "w-full rounded-lg py-2.5 text-sm  leading-5 dark:text-white text-gray-700 flex-1 uppercase font-bold",
-                  " ring-opacity-60 ring-offset-2 dark:ring-offset-blue-400 ring-offset-gray-700 focus:outline-none focus:ring-1 focus:ring-gray-700",
-                  selected
-                    ? "bg-gray-600/50 shadow text-gray-800"
-                    : "dark:text-indigo-500 text-gray-800 hover:bg-white/[0.12] dark:hover:text-indigo-300 hover:text-gray-600"
-                )
-              }
-            >
-              {tab}
-            </Tab>
-          ))}
-        </Tab.List>
-      </Tab.Group>
+    <div className="flex flex-col items-start gap-3 mx-8 my-8 shadow-xl md:flex-row">
+      <p className="opacity-80 md:hidden">¿Qué puedo leer?</p>
+      {tabs.map((tab) => (
+        <div key={tab} className="flex items-center flex-grow gap-2">
+          <CheckCircle
+            className={`md:hidden ${
+              selectedCategory === tab ? "text-green-400" : "opacity-0"
+            }`}
+          />
+          <button
+            type="button"
+            className={`text-2xl md:text-xl font-bold px-4 py-2 flex-grow ${
+              selectedCategory === tab ? "bg-gray-700 rounded-lg" : ""
+            }`}
+            onClick={() => handleCategoryChange(tab)}
+          >
+            {tab}
+          </button>
+        </div>
+      ))}
     </div>
   );
 };

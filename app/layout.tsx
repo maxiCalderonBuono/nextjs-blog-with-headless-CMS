@@ -4,6 +4,8 @@ import MainNavBar from "~/components/MainNavBar";
 import localFont from "next/font/local";
 import ThemeProvider from "~/components/ThemeProvider";
 import SiteFooter from "~/components/SiteFooter";
+import { FiltersProvider } from "~/components/filter";
+import getAllPosts from "~/lib/getAllPosts";
 
 const inter = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
@@ -61,18 +63,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const data = await getAllPosts();
+
   return (
     <html lang="es" className={`${inter.variable} ${fontHeading.variable}`}>
       <body className="flex flex-col min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <MainNavBar />
-          <main className="flex-grow">{children}</main>
-          <SiteFooter />
+          <FiltersProvider>
+            <MainNavBar />
+            <main className="flex-grow">{children}</main>
+            <SiteFooter />
+          </FiltersProvider>
         </ThemeProvider>
       </body>
     </html>

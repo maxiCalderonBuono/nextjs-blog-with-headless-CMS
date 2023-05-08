@@ -6,6 +6,61 @@ import getPostBySlug from "~/lib/getPostBySlug";
 import { Post } from "~/types";
 import profile from "../../../assets/images/profile.jpg";
 import ReactMarkdown from "react-markdown";
+import type { Metadata } from "next";
+import { absoluteUrl } from "~/lib/utils";
+
+interface PostPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const slug = params.slug;
+
+  const { data } = await getPostBySlug(slug);
+
+  const { attributes } = data;
+
+  if (!attributes) {
+    return {};
+  }
+
+  const url = process.env.NEXT_PUBLIC_APP_URL;
+
+  const ogUrl = new URL(`${url}/api/og`);
+  ogUrl.searchParams.set("heading", attributes.title);
+  ogUrl.searchParams.set("type", "Blog Post");
+  ogUrl.searchParams.set("mode", "dark");
+
+  return {
+    title: attributes.title,
+    description: attributes.description,
+
+    openGraph: {
+      title: attributes.title,
+      description: attributes.description,
+      type: "article",
+      url: absoluteUrl(attributes.slug),
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: attributes.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: attributes.title,
+      description: attributes.description,
+      images: [ogUrl.toString()],
+    },
+  };
+}
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
@@ -17,7 +72,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
       <Link
-        href="/posts"
+        href="/blog"
         className="absolute left-[-200px] top-14 hidden xl:inline-flex"
       >
         <ChevronLeft className="flex items-center" />
@@ -69,7 +124,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       </section>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/posts" className="flex items-center">
+        <Link href="/blog" className="flex items-center">
           <ChevronLeft className="w-4 h-4 mr-2" />
           Todos los posts
         </Link>

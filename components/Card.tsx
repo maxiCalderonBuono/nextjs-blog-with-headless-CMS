@@ -12,7 +12,7 @@ export const Card = ({ attributes, index }: ArticleProps) => {
   return (
     <article>
       <Link
-        href={`/posts/${attributes.slug}`}
+        href={`/blog/${attributes.slug}`}
         className="flex flex-col space-y-6 "
       >
         <div className="group  [perspective:1000px]">
