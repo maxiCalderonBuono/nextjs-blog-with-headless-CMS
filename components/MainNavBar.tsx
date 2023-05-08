@@ -5,9 +5,12 @@ import ToggleMode from "./ToggleMode";
 import SlideOver from "./SlideOver";
 import getAllPosts from "~/lib/getAllPosts";
 import NavLinks from "./NavlLinks";
+import { Response } from "~/types";
 
 const MainNavBar = async () => {
-  const data = await getAllPosts();
+  const data: Response = await getAllPosts();
+
+  console.log(data);
 
   return (
     <nav className="px-5 py-4 shadow-lg dark:bg-gray-900/70">

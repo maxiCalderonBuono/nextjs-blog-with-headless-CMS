@@ -6,8 +6,13 @@ import { ClosedMenu, OpenMenu } from "~/utils/Icons";
 import Link from "next/link";
 import Tabs from "./Tabs";
 import useWindowSize from "../hooks/useWindowSize";
+import { Response, Post } from "~/types";
 
-const SlideOver = ({ data: res }) => {
+interface SiderProps {
+  posts: Response;
+}
+
+const SlideOver = ({ posts: res }: SiderProps) => {
   const [open, setOpen] = useState(false);
 
   const { width } = useWindowSize();
@@ -15,6 +20,7 @@ const SlideOver = ({ data: res }) => {
   const { data: posts } = res;
 
   useEffect(() => {
+    if (!width) return;
     if (width >= 768) {
       setOpen(false);
     }
