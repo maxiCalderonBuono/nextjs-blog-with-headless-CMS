@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
     const fontBold = await interBold;
 
     const { searchParams } = new URL(req.url);
-    console.log(searchParams);
+
     const values = ogImageSchema.parse(Object.fromEntries(searchParams));
     const heading =
       values.heading.length > 140
@@ -142,7 +142,6 @@ export async function GET(req: NextRequest) {
       }
     );
   } catch (error) {
-    console.log(error);
     return new Response("Failed to generate image papu", {
       status: 500,
     });

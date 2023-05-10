@@ -8,6 +8,8 @@ import profile from "../../../assets/images/profile.jpg";
 import ReactMarkdown from "react-markdown";
 import type { Metadata } from "next";
 import { absoluteUrl } from "~/lib/utils";
+import { client } from "~/lib/contentful/client";
+import ContentfulImage from "~/components/UI/ContentfulImage";
 
 interface PostPageProps {
   params: {
@@ -65,9 +67,14 @@ export async function generateMetadata({
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
 
-  const { data } = await getPostBySlug(slug);
+  const response = await client.getEntries({
+    content_type: "blog",
+    "fields.slug": slug,
+  });
 
-  const { attributes } = data;
+  console.log(response);
+
+  const { fields } = response.items[0];
 
   return (
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
@@ -79,47 +86,42 @@ export default async function Post({ params }: { params: { slug: string } }) {
         Todos los posts
       </Link>
 
-      {attributes.createdAt && (
-        <time
-          dateTime={attributes.createdAt}
-          className="block text-sm opacity-60"
-        >
-          Publicado el {formatDate(attributes.createdAt)}
+      {/* {fields.createdAt && (
+        <time dateTime={fields.createdAt} className="block text-sm opacity-60">
+          Publicado el {formatDate(fields.createdAt)}
         </time>
-      )}
+      )} */}
       <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">
-        {attributes.title}
+        {fields.title}
       </h1>
       <div className="flex items-center my-3 space-x-2 text-sm">
-        <Image
+        {/* <Image
           src={profile}
           alt="El escritor de Mindenkié"
           width={42}
           height={42}
           className="bg-indigo-300 rounded-full"
-        />
+        /> */}
         <div className="flex-1 leading-tight text-left">
           <p className="font-medium">Sultano</p>
         </div>
       </div>
 
-      {attributes.image && (
-        <Image
-          src={attributes.image.data.attributes.formats.medium.url}
-          alt={attributes.title}
-          width={720}
-          height={405}
-          priority
-          className="rounded-md"
+      {/* {fields.image && (
+        <ContentfulImage
+          src={fields.image.fields.file.url}
+          fill
+          alt={fields.title}
+          className="rounded-lg "
         />
-      )}
+      )} */}
 
       <p className="p-4 my-6 border border-l-4 border-gray-400 rounded-md ">
-        {attributes.description}
+        {fields.description}
       </p>
       <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-h2:text-white prose-a:after:ml-2">
         <ReactMarkdown linkTarget="_blank" className="after:text-indigo-300">
-          {attributes.content}
+          {fields.content}
         </ReactMarkdown>
       </section>
       <hr className="mt-12" />

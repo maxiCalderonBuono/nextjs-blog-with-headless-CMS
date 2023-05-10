@@ -2,13 +2,14 @@ import Image from "next/image";
 import { PostAttributes } from "~/types";
 import { TimeAgo } from "./TimeAgo";
 import Link from "next/link";
+import ContentfulImage from "./UI/ContentfulImage";
 
-interface ArticleProps {
-  attributes: PostAttributes;
-  index: number;
-}
+// interface ArticleProps {
+//   attributes: PostAttributes;
+//   index: number;
+// }
 
-export const Card = ({ attributes, index }: ArticleProps) => {
+export const Card = ({ attributes }) => {
   return (
     <article>
       <Link
@@ -19,8 +20,8 @@ export const Card = ({ attributes, index }: ArticleProps) => {
           <div className="relative aspect-video h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div className="absolute inset-0">
               {attributes.image && (
-                <Image
-                  src={attributes.image.data.attributes.formats.large.url}
+                <ContentfulImage
+                  src={attributes.image.fields.file.url}
                   alt={attributes.title}
                   fill
                   priority

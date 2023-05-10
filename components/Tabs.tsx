@@ -5,23 +5,22 @@ import { Post } from "~/types";
 import { useFilterContext } from "./filter";
 import { CheckCircle } from "lucide-react";
 
-type Props = {
-  posts: Post[];
-  onChange?: () => void;
-};
+// type Props = {
+//   posts: Post[];
+//   onChange?: () => void;
+// };
 
-const Tabs: React.FC<Props> = ({ posts, onChange }) => {
+const Tabs = ({ posts, onChange }) => {
   const { selectedCategory, setSelectedCategory, setFilters } =
     useFilterContext();
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     const filter =
-      category === "Todas"
-        ? null
-        : (post: Post) => post.attributes.filter === category;
+      category === "Todas" ? null : (post) => post.fields.filter === category;
 
     setFilters({ category: filter });
+
     if (onChange) {
       onChange();
     }
@@ -31,7 +30,7 @@ const Tabs: React.FC<Props> = ({ posts, onChange }) => {
     const buffer: Set<string> = new Set(["Todas"]);
 
     for (const post of posts) {
-      buffer.add(post.attributes.filter);
+      buffer.add(post.fields.filter);
     }
     return Array.from(buffer);
   }, [posts]);

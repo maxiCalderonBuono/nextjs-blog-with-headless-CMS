@@ -5,12 +5,13 @@ import ToggleMode from "./ToggleMode";
 import SlideOver from "./SlideOver";
 import getAllPosts from "~/lib/getAllPosts";
 import NavLinks from "./NavlLinks";
-import { Response } from "~/types";
+
+import { client } from "~/lib/contentful/client";
 
 export default async function MainNavBar() {
-  const data: Response = await getAllPosts();
+  const response = await client.getEntries({ content_type: "blog" });
 
-  console.log(data);
+  const data = response.items;
 
   return (
     <nav className="px-5 py-4 shadow-lg dark:bg-gray-900/70">

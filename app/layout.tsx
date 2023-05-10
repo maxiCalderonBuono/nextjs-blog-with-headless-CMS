@@ -5,7 +5,6 @@ import localFont from "next/font/local";
 import ThemeProvider from "~/components/ThemeProvider";
 import SiteFooter from "~/components/SiteFooter";
 import { FiltersProvider } from "~/components/filter";
-import getAllPosts from "~/lib/getAllPosts";
 
 const inter = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
@@ -68,8 +67,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const data = await getAllPosts();
-
   return (
     <html lang="es" className={`${inter.variable} ${fontHeading.variable}`}>
       <body className="flex flex-col min-h-screen">

@@ -5,11 +5,12 @@ import Link from "next/link";
 import { TimeAgo } from "./TimeAgo";
 import { ArrowRight } from "lucide-react";
 import Balancer from "react-wrap-balancer";
+import ContentfulImage from "./UI/ContentfulImage";
 
-interface ArticleProps {
-  attributes: PostAttributes;
-}
-const HorizontalCard = ({ attributes }: ArticleProps) => {
+// interface ArticleProps {
+//   attributes: PostAttributes;
+// }
+const HorizontalCard = ({ attributes }) => {
   return (
     <Link href={`/blog/${attributes.slug}`}>
       <div className="relative rounded-lg bg-base-100 hover:shadow-xl dark:shadow-gray-800 transition  ease-in-out hover:scale-[102%] w-full">
@@ -17,8 +18,8 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
           <div className="hidden w-1/5 lg:block">
             {attributes.image && (
               <div className="relative w-[95%] h-24 grow">
-                <Image
-                  src={attributes.image.data.attributes.formats.thumbnail.url}
+                <ContentfulImage
+                  src={attributes.image.fields.file.url}
                   fill
                   alt={attributes.title}
                   className="rounded-lg "

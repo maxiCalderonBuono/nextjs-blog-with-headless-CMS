@@ -1,8 +1,12 @@
 import getAllPosts from "~/lib/getAllPosts";
 import Home from "~/components/Home";
+import { client } from "~/lib/contentful/client";
 
 const RootHome = async () => {
-  const data = await getAllPosts();
+  const response = await client.getEntries({ content_type: "blog" });
+
+  const data = response.items;
+
   return (
     <main className="flex flex-col mx-auto md:items-center justify-evenly">
       <Home data={data} />

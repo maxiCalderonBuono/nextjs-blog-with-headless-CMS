@@ -1,19 +1,23 @@
+"use client";
+
 import React from "react";
 import { Post } from "~/types";
 import HorizontalCard from "./HorizontaLCard";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Card } from "./Card";
 
-interface PostListProps {
-  posts: Post[];
-}
+// interface PostListProps {
+//   posts: Post[];
+// }
 
-const PostList = ({ posts }: PostListProps) => {
+const PostList = ({ posts }) => {
   return (
     <section className="py-4">
       {posts.map((post) => (
-        <div key={post.id}>
-          <HorizontalCard attributes={post.attributes} />
+        <div key={post.sys.id}>
+          <HorizontalCard attributes={post.fields} />
+
           <hr className="mt-2 md:hidden" />
         </div>
       ))}

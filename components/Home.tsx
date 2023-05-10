@@ -11,15 +11,13 @@ interface HompeProps {
   data: Response;
 }
 
-const Home = ({ data: res }: HompeProps) => {
+const Home = ({ data }) => {
   const { filters } = useFilterContext();
-
-  const { data: posts } = res;
 
   const matches = useMemo(() => {
     const filtersToApply = Object.values(filters).filter(Boolean);
 
-    let matches = posts;
+    let matches = data;
 
     for (let filter of filtersToApply) {
       if (filter) {
@@ -28,12 +26,12 @@ const Home = ({ data: res }: HompeProps) => {
     }
 
     return matches;
-  }, [filters, posts]);
+  }, [filters, data]);
 
   return (
     <div className="w-full max-w-5xl px-6">
       <div className="hidden md:block">
-        <Tabs posts={posts} />
+        <Tabs posts={data} />
       </div>
       <Grid posts={matches} />
       <h2 className="text-3xl font-bold uppercase md:text-4xl">

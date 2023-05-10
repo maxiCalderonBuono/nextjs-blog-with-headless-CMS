@@ -8,16 +8,14 @@ import Tabs from "./Tabs";
 import useWindowSize from "../hooks/useWindowSize";
 import { Response, Post } from "~/types";
 
-interface SiderProps {
-  posts: Response;
-}
+// interface SiderProps {
+//   posts: Response;
+// }
 
-const SlideOver = ({ posts: res }: SiderProps) => {
+const SlideOver = ({ posts }) => {
   const [open, setOpen] = useState(false);
 
   const { width } = useWindowSize();
-
-  const { data: posts } = res;
 
   useEffect(() => {
     if (!width) return;
