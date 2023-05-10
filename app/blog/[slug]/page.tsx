@@ -72,8 +72,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
     "fields.slug": slug,
   });
 
-  console.log(response);
-
   const { fields } = response.items[0];
 
   return (
