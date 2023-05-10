@@ -9,7 +9,6 @@ import ReactMarkdown from "react-markdown";
 import type { Metadata } from "next";
 import { absoluteUrl } from "~/lib/utils";
 import { client } from "~/lib/contentful/client";
-import ContentfulImage from "~/components/UI/ContentfulImage";
 
 interface PostPageProps {
   params: {

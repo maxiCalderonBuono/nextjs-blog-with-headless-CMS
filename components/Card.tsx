@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Fields } from "~/types";
 import { TimeAgo } from "./TimeAgo";
 import Link from "next/link";
-import ContentfulImage from "./UI/ContentfulImage";
 
 interface ArticleProps {
   attributes: Fields;
@@ -19,7 +18,7 @@ export const Card = ({ attributes }: ArticleProps) => {
           <div className="relative aspect-video h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div className="absolute inset-0">
               {attributes.image && (
-                <ContentfulImage
+                <Image
                   src={attributes.image.fields.file.url}
                   alt={attributes.title}
                   fill

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Items } from "~/types";
 import HorizontalCard from "./HorizontaLCard";

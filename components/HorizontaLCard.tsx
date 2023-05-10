@@ -5,7 +5,6 @@ import Link from "next/link";
 import { TimeAgo } from "./TimeAgo";
 import { ArrowRight } from "lucide-react";
 import Balancer from "react-wrap-balancer";
-import ContentfulImage from "./UI/ContentfulImage";
 
 interface ArticleProps {
   attributes: Fields;
@@ -18,7 +17,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
           <div className="hidden w-1/5 lg:block">
             {attributes.image && (
               <div className="relative w-[95%] h-24 grow">
-                <ContentfulImage
+                <Image
                   src={attributes.image.fields.file.url}
                   fill
                   alt={attributes.title}

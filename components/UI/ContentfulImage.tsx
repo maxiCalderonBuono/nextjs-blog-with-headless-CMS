@@ -14,12 +14,12 @@ interface ContentfulImageProps extends LoaderProps {
   className?: string;
 }
 
-const contentfulLoader = ({ src, width, quality }: LoaderProps) => {
+export default function contentfulLoader({ src, width, quality }: LoaderProps) {
   return `${src}?w=${width}&q=${quality || 75}`;
-};
+}
 
-const ContentfulImage = (props: ContentfulImageProps) => {
-  return <Image loader={contentfulLoader} {...props} />;
-};
+// const ContentfulImage = (props: ContentfulImageProps) => {
+//   return <Image loader={contentfulLoader} {...props} />;
+// };
 
-export default ContentfulImage;
+// export default ContentfulImage;
