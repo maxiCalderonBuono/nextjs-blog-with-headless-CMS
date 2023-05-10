@@ -1,5 +1,5 @@
 import React from "react";
-import { PostAttributes } from "../types";
+import { Fields } from "../types";
 import Image from "next/image";
 import Link from "next/link";
 import { TimeAgo } from "./TimeAgo";
@@ -7,10 +7,10 @@ import { ArrowRight } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import ContentfulImage from "./UI/ContentfulImage";
 
-// interface ArticleProps {
-//   attributes: PostAttributes;
-// }
-const HorizontalCard = ({ attributes }) => {
+interface ArticleProps {
+  attributes: Fields;
+}
+const HorizontalCard = ({ attributes }: ArticleProps) => {
   return (
     <Link href={`/blog/${attributes.slug}`}>
       <div className="relative rounded-lg bg-base-100 hover:shadow-xl dark:shadow-gray-800 transition  ease-in-out hover:scale-[102%] w-full">
@@ -46,7 +46,7 @@ const HorizontalCard = ({ attributes }) => {
           </div>
 
           <div className="flex flex-col items-end flex-shrink-0 w-1/7 lg:w-1/6">
-            <TimeAgo timeStamp={attributes.createdAt} />
+            {/* <TimeAgo timeStamp={attributes.createdAt} /> */}
             <span className="absolute self-end hidden text-sm font-bold text-indigo-300 align-bottom transition-opacity delay-150 opacity-0 sm:flex bottom-3 right-3 group-hover:opacity-100">
               Leer más <ArrowRight />
             </span>

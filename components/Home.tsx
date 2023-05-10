@@ -1,17 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Filter, Response } from "~/types";
+import { useMemo } from "react";
+import { Items } from "~/types";
 import Tabs from "~/components/Tabs";
 import PostList from "./PostList";
 import Grid from "./Grid";
 import { useFilterContext } from "./filter";
 
 interface HompeProps {
-  data: Response;
+  data: Items[];
 }
 
-const Home = ({ data }) => {
+const Home = ({ data }: HompeProps) => {
   const { filters } = useFilterContext();
 
   const matches = useMemo(() => {

@@ -1,15 +1,14 @@
 import Image from "next/image";
-import { PostAttributes } from "~/types";
+import { Fields } from "~/types";
 import { TimeAgo } from "./TimeAgo";
 import Link from "next/link";
 import ContentfulImage from "./UI/ContentfulImage";
 
-// interface ArticleProps {
-//   attributes: PostAttributes;
-//   index: number;
-// }
+interface ArticleProps {
+  attributes: Fields;
+}
 
-export const Card = ({ attributes }) => {
+export const Card = ({ attributes }: ArticleProps) => {
   return (
     <article>
       <Link

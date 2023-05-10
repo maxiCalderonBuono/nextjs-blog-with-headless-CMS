@@ -6,13 +6,13 @@ import { ClosedMenu, OpenMenu } from "~/utils/Icons";
 import Link from "next/link";
 import Tabs from "./Tabs";
 import useWindowSize from "../hooks/useWindowSize";
-import { Response, Post } from "~/types";
+import { Items } from "~/types";
 
-// interface SiderProps {
-//   posts: Response;
-// }
+interface SliderProps {
+  posts: Items[];
+}
 
-const SlideOver = ({ posts }) => {
+const SlideOver = ({ posts }: SliderProps) => {
   const [open, setOpen] = useState(false);
 
   const { width } = useWindowSize();

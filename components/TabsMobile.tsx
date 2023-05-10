@@ -1,11 +1,11 @@
 "use client";
 
 import { useMemo } from "react";
-import { Filter, Post } from "~/types";
+import { Filter, Items } from "~/types";
 import { useFilterContext } from "./filter";
 
 type Props = {
-  posts: Post[];
+  posts: Items[];
   onChange: (filter: Filter) => void;
 };
 
@@ -17,7 +17,7 @@ const TabsMobile: React.FC<Props> = ({ posts, onChange }) => {
     const buffer: Set<string> = new Set(["Todas"]);
 
     for (const post of posts) {
-      buffer.add(post.attributes.filter);
+      buffer.add(post.fields.filter);
     }
     return Array.from(buffer);
   }, [posts]);
@@ -27,7 +27,7 @@ const TabsMobile: React.FC<Props> = ({ posts, onChange }) => {
     const filter =
       category === "Todas"
         ? null
-        : (post: Post) => post.attributes.filter === category;
+        : (post: Items) => post.fields.filter === category;
 
     setFilters({ category: filter });
   };

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "~/lib/formatedDate";
 import getPostBySlug from "~/lib/getPostBySlug";
-import { Post } from "~/types";
+
 import profile from "../../../assets/images/profile.jpg";
 import ReactMarkdown from "react-markdown";
 import type { Metadata } from "next";

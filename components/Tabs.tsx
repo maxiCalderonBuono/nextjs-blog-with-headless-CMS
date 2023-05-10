@@ -1,23 +1,25 @@
 "use client";
 
 import { useMemo } from "react";
-import { Post } from "~/types";
 import { useFilterContext } from "./filter";
 import { CheckCircle } from "lucide-react";
+import { Items } from "~/types";
 
-// type Props = {
-//   posts: Post[];
-//   onChange?: () => void;
-// };
+type TabsProps = {
+  posts: Items[];
+  onChange?: () => void;
+};
 
-const Tabs = ({ posts, onChange }) => {
+const Tabs = ({ posts, onChange }: TabsProps) => {
   const { selectedCategory, setSelectedCategory, setFilters } =
     useFilterContext();
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     const filter =
-      category === "Todas" ? null : (post) => post.fields.filter === category;
+      category === "Todas"
+        ? null
+        : (post: Items) => post.fields.filter === category;
 
     setFilters({ category: filter });
 
