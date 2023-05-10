@@ -19,7 +19,7 @@ const Home = ({ data }: HompeProps) => {
 
     let matches = data;
 
-    for (let filter of filtersToApply) {
+    for (const filter of filtersToApply) {
       if (filter) {
         matches = matches.filter(filter);
       }
