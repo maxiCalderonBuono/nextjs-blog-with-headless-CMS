@@ -4,6 +4,9 @@ dependencies:
   '@contentful/rich-text-react-renderer':
     specifier: ^15.16.4
     version: 15.16.4(react-dom@18.2.0)(react@18.2.0)
+  '@contentful/rich-text-types':
+    specifier: ^16.1.0
+    version: 16.1.0
   '@headlessui/react':
     specifier: ^1.7.14
     version: 1.7.14(react-dom@18.2.0)(react@18.2.0)

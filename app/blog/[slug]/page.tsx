@@ -9,7 +9,12 @@ import ReactMarkdown from "react-markdown";
 import type { Metadata } from "next";
 import { absoluteUrl } from "~/lib/utils";
 import { client } from "~/lib/contentful/client";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+import { INLINES, Node, BLOCKS } from "@contentful/rich-text-types";
+import React from "react";
 
 interface PostPageProps {
   params: {
@@ -63,6 +68,28 @@ interface PostPageProps {
 //     },
 //   };
 // }
+
+const options = {
+  renderNode: {
+    [INLINES.HYPERLINK]: (node: Node, children: React.ReactNode) => {
+      return (
+        <a target="_blank" rel="noopener noreferrer" href={node.data.uri}>
+          {children}
+        </a>
+      );
+    },
+    [BLOCKS.EMBEDDED_ASSET]: (node: Node, children: React.ReactNode) => {
+      return (
+        <Image
+          alt={node.data.target.fields.file.details.title}
+          src={`https:${node.data.target.fields.file.url}`}
+          height={node.data.target.fields.file.details.image.height}
+          width={node.data.target.fields.file.details.image.width}
+        />
+      );
+    },
+  },
+};
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
@@ -119,7 +146,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         {fields.description}
       </p>
       <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2">
-        {documentToReactComponents(fields.content)}
+        {documentToReactComponents(fields.content, options)}
       </section>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
