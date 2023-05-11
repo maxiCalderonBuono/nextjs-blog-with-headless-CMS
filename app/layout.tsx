@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Mindenkié",
     images: [
       {
-        url: "/mindenkie_og_image.png",
+        url: "https://res.cloudinary.com/dvqlenul5/image/upload/v1683838762/mindekie_og_main_e56nem.png",
         width: 1200,
         height: 630,
       },
