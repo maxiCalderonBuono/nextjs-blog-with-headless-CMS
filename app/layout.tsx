@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Mindenkié",
     images: [
       {
-        url: "./mindekie_og_main.png",
+        url: "/mindekie_og_main.png",
         width: 1920,
         height: 1080,
       },
