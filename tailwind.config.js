@@ -10,10 +10,6 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      content: {
-        external: "↗",
-      },
-
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -31,6 +27,7 @@ module.exports = {
               marginTop: "0.5rem",
               scrollMargin: "5rem",
               fontWeight: "700",
+
               fontSize: "2.25rem",
               lineHeight: "2.5rem",
               letterSpacing: "-0.025rem",
@@ -43,7 +40,7 @@ module.exports = {
               fontWeight: "600",
               fontSize: "1.875rem",
               lineHeight: "2.25rem",
-              // color: theme("colors.white"),
+
               letterSpacing: "-0.025rem",
               "&:firstChild": {
                 marginTop: "0px",
@@ -54,6 +51,7 @@ module.exports = {
               scrollMargin: "5rem",
               fontWeight: "600",
               fontSize: "1.5rem",
+
               lineHeight: "2rem",
               letterSpacing: "-0.025rem",
             },
@@ -61,6 +59,7 @@ module.exports = {
               marginTop: "2rem",
               scrollMargin: "5rem",
               fontWeight: "600",
+
               fontSize: "1.25rem",
               lineHeight: "1.75rem",
               letterSpacing: "-0.025rem",
@@ -69,6 +68,7 @@ module.exports = {
               marginTop: "2rem",
               scrollMargin: "5rem",
               fontWeight: "600",
+
               fontSize: "1.125rem",
               lineHeight: "1.75rem",
               letterSpacing: "-0.025rem",
@@ -78,6 +78,7 @@ module.exports = {
               scrollMargin: "5rem",
               fontWeight: "600",
               fontSize: "1rem",
+
               lineHeight: "1.5rem",
               letterSpacing: "-0.025rem",
             },
@@ -89,15 +90,16 @@ module.exports = {
               "&:not(firstChild)": {
                 marginTop: "1.5rem",
               },
+              color: theme("colors.gray.900"),
             },
 
             blockQuote: {
               margintTop: "1.5rem",
               borderLeft: "3px solid",
-              borderColor: theme("colors.gray.400"),
+              borderColor: theme("colors.gray.500"),
               paddingLeft: "1.5rem",
               fontStyle: "italic",
-              color: theme("colors.gray.400"),
+              color: theme("colors.gray.500"),
               opacity: "90%",
             },
             ul: {

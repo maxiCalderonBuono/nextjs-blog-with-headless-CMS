@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.4",
     "@headlessui/react": "^1.7.14",
     "@next/font": "^13.4.0",
     "@tailwindcss/typography": "^0.5.9",

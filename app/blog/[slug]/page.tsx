@@ -9,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import type { Metadata } from "next";
 import { absoluteUrl } from "~/lib/utils";
 import { client } from "~/lib/contentful/client";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 interface PostPageProps {
   params: {
@@ -71,7 +72,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     "fields.slug": slug,
   });
 
-  const { fields } = response.items[0];
+  const { fields, sys } = response.items[0];
 
   return (
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
@@ -83,43 +84,42 @@ export default async function Post({ params }: { params: { slug: string } }) {
         Todos los posts
       </Link>
 
-      {/* {fields.createdAt && (
-        <time dateTime={fields.createdAt} className="block text-sm opacity-60">
-          Publicado el {formatDate(fields.createdAt)}
+      {sys.createdAt && (
+        <time dateTime={sys.createdAt} className="block text-sm opacity-60">
+          Publicado el {formatDate(sys.createdAt)}
         </time>
-      )} */}
+      )}
       <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">
         {fields.title}
       </h1>
       <div className="flex items-center my-3 space-x-2 text-sm">
-        {/* <Image
+        <Image
           src={profile}
           alt="El escritor de Mindenkié"
           width={42}
           height={42}
           className="bg-indigo-300 rounded-full"
-        /> */}
+        />
         <div className="flex-1 leading-tight text-left">
           <p className="font-medium">Sultano</p>
         </div>
       </div>
 
-      {/* {fields.image && (
-        <ContentfulImage
+      {fields.image && (
+        <Image
           src={fields.image.fields.file.url}
-          fill
+          width={720}
+          height={405}
           alt={fields.title}
           className="rounded-lg "
         />
-      )} */}
+      )}
 
       <p className="p-4 my-6 border border-l-4 border-gray-400 rounded-md ">
         {fields.description}
       </p>
-      <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-h2:text-white prose-a:after:ml-2">
-        <ReactMarkdown linkTarget="_blank" className="after:text-indigo-300">
-          {fields.content}
-        </ReactMarkdown>
+      <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2">
+        {documentToReactComponents(fields.content)}
       </section>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
