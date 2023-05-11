@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import getAllPosts from "~/lib/getAllPosts";
-
 import PostList from "~/components/PostList";
 import { client } from "~/lib/contentful/client";
 
