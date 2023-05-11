@@ -47,13 +47,14 @@ export const metadata: Metadata = {
     siteName: "Mindenkié",
     images: [
       {
-        url: "/mindekie_og_main.png",
+        url: "https://res.cloudinary.com/dvqlenul5/image/upload/v1683838762/mindekie_og_main_e56nem.png",
         width: 1920,
         height: 1080,
       },
     ],
+    whatsapp: { content: "true" },
     locale: "en-ES",
-    type: "website",
+    type: "blog",
   },
   robots: {
     index: true,
