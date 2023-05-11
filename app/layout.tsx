@@ -22,15 +22,32 @@ export const metadata: Metadata = {
     default: "Mindenkié - Bienvenidos a tod@s",
     template: "%s | Mindenkié",
   },
-  description: "Politica, economía y sociedad.",
+  description:
+    "Un blog para invitar a debatir y repensar la politica, economía y sociedad.",
+  keywords: [
+    "Economía",
+    "Mundo",
+    "Política argentina",
+    "Sociedad",
+    "Educación",
+    "Seguridad",
+  ],
+  authors: [
+    {
+      name: "maxiCalderónBuono",
+      url: "https://www.maxicalderon.dev/",
+    },
+  ],
+  creator: "maxiCalderónBuono",
   openGraph: {
     title: "Mindenkié",
-    description: "Politica, economía y sociedad.",
-    // url: "https://leerob.io",
+    description:
+      "Un blog para invitar a debatir y repensar la politica, economía y sociedad.",
+    url: "https://mindenkie.vercel.app/",
     siteName: "Mindenkié",
     images: [
       {
-        url: "https://leerob.io/og.jpg",
+        url: "./mindekie_og_main.png",
         width: 1920,
         height: 1080,
       },
@@ -56,10 +73,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  verification: {
-    google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
-    yandex: "14d2e73487fa6c71",
-  },
+  // verification: {
+  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+  //   yandex: "14d2e73487fa6c71",
+  // },
 };
 
 export default async function RootLayout({
