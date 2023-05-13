@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Mindenkié",
     description:
       "Un blog para invitar a debatir y repensar la politica, economía y sociedad.",
-    url: "https://mindenkie.vercel.app/",
+    url: "https://mindenkietest.vercel.app/",
     siteName: "Mindenkié",
     images: [
       {
