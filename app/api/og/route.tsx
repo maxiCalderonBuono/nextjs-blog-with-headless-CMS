@@ -37,14 +37,21 @@ export async function GET(req: Request) {
         <div
           tw="flex relative flex-col p-12 w-full h-full items-start"
           style={{
-            color: "b2cfd5",
-            background:
-              mode === "dark"
-                ? "linear-gradient(90deg, #000 0%, #111 100%)"
-                : "white",
+            color: "#000",
+            background: "#b2cfd5",
           }}
         >
-          <p tw="text-lg font-bold uppercase">Mindenkié</p>
+          <p
+            tw="text-2xl font-bold uppercase"
+            style={{
+              fontFamily: "Cal Sans",
+              fontWeight: "bold",
+              fontStyle: "italic",
+            }}
+          >
+            Mindenkié
+          </p>
+
           <div tw="flex flex-col flex-1 py-10">
             <div
               tw="flex text-xl uppercase font-bold tracking-tight"
@@ -58,7 +65,7 @@ export async function GET(req: Request) {
                 fontFamily: "Cal Sans",
                 fontWeight: "bold",
                 marginLeft: "-3px",
-                fontSize,
+                // fontSize,
               }}
             >
               {heading}
@@ -66,7 +73,7 @@ export async function GET(req: Request) {
           </div>
           <div tw="flex items-center w-full justify-between">
             <div
-              tw="flex text-xl"
+              tw="flex text-xl bg-[#35a1f4] text-white px-4 py-2 rounded-xl font-bold"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
               mindenkie.vercel.app
@@ -79,6 +86,7 @@ export async function GET(req: Request) {
                 display: "flex",
               }}
             >
+              <span>Para tod@s- </span>
               <Baseline />
               <p className="text-center">{`${currentYear} © `}</p>
             </div>
