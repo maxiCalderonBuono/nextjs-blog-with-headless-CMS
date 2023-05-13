@@ -4,36 +4,38 @@ import Balancer from "react-wrap-balancer";
 const about = () => {
   return (
     <section className="w-full max-w-5xl px-6 lg:px-5 py-10 mx-auto md:h-[calc(100vh-166px)]">
-      <h1 className="mb-8 text-5xl font-bold text-gray-700 lg:text-6xl dark:text-indigo-300">
+      <h1 className="mb-8 text-5xl font-bold text-transparent lg:text-7xl bg-clip-text bg-gradient-to-b dark:from-indigo-700 dark:via-blue-400 dark:to-cyan-600 from-gray-800 via-slate-600 to-gray-400">
         Mindenkié.
       </h1>
 
       <article className="flex flex-col gap-8 text-xl items-left">
         <p className="">
           <Balancer ratio={0.4}>
-            Normalmente, las personas suelen percibir la realidad de una manera
-            automatizada. Sin embargo, es importante realizar diferentes
-            análisis que puedan facilitar la alimentación cognitiva de aquellos
-            que deseen apreciar una reflexión sobre la realidad. Para ello, se
-            puede recurrir a MINDENKIre, que ofrece una perspectiva única e
-            introspectiva.
+            En ocasiones, nuestra percepción de la realidad puede volverse
+            automática y limitada. Sin embargo, es fundamental explorar diversos
+            análisis que enriquezcan nuestra comprensión y nos inviten a
+            reflexionar sobre el mundo que nos rodea. Es en este punto donde
+            entra en juego MINDENKIRE, un blog que ofrece una perspectiva única
+            e introspectiva.
           </Balancer>
         </p>
 
         <p>
           <Balancer ratio={0.4}>
-            En un mundo multipolar, el hecho de pertenecer a una unipolaridad
-            que devino de una bipolaridad no podemos quedarnos encasillados
-            donde el futuro irá hacia los nacionalismos de inclusión o exclusión
-            dependiendo del modelo de país.
+            En un mundo cada vez más complejo y diverso, resulta insuficiente
+            aferrarse a las estructuras unipolares heredadas de épocas
+            bipolares. Nos enfrentamos a un futuro en el que los nacionalismos
+            de inclusión o exclusión cobrarán protagonismo, dependiendo del
+            modelo de país que adoptemos.
           </Balancer>
         </p>
 
         <p>
           <Balancer ratio={0.4}>
-            En este auto-stop debemos tener en cuenta todos los polos para
-            entender las realidades mundiales, mindenkire, midenkirol,
-            mindenkié.
+            En este viaje de descubrimiento, es esencial considerar todos los
+            polos y dimensiones para comprender las realidades mundiales en su
+            totalidad. mindenkire, midenkirol, mindenkié: un espacio donde
+            convergen todas las voces y perspectivas.
           </Balancer>
         </p>
       </article>

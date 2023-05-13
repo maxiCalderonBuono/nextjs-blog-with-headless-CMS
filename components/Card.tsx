@@ -15,7 +15,7 @@ export const Card = ({ attributes }: ArticleProps) => {
         className="flex flex-col space-y-6 "
       >
         <div className="group  [perspective:1000px]">
-          <div className="relative aspect-video h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+          <div className="relative aspect-video h-full w-full rounded-xl  transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div className="absolute inset-0">
               {attributes.image && (
                 <Image
@@ -23,7 +23,7 @@ export const Card = ({ attributes }: ArticleProps) => {
                   alt={attributes.title}
                   fill
                   priority
-                  className="object-cover rounded-md shadow-xl shadow-black/40"
+                  className="object-cover rounded-md shadow-lg"
                 />
               )}
             </div>
