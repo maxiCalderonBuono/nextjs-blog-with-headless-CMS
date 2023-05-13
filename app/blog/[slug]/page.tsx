@@ -28,13 +28,13 @@ export async function generateMetadata({
     "fields.slug": slug,
   });
 
-  const { fields, sys } = response.items[0];
+  const { fields } = response.items[0];
 
   if (!fields) {
     return {};
   }
 
-  const url = "https://mindenkie.vercel.app/";
+  const url = process.env.NEXT_PUBLIC_APP_URL;
 
   const ogUrl = new URL(`${url}/api/og`);
   ogUrl.searchParams.set("heading", fields.title);
