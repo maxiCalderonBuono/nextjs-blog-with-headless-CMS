@@ -38,7 +38,7 @@ export async function GET(req: Request) {
           tw="flex relative flex-col p-12 w-full h-full items-start"
           style={{
             color: "#000",
-            background: "#b2cfd5",
+            backgroundImage: "linear-gradient(to bottom, #7F9CF5, #b2cfd5)",
           }}
         >
           <p
@@ -73,7 +73,7 @@ export async function GET(req: Request) {
           </div>
           <div tw="flex items-center w-full justify-between">
             <div
-              tw="flex text-xl bg-[#35a1f4] text-white px-4 py-2 rounded-xl font-bold"
+              tw="flex text-xl bg-[#35a1f4] text-white px-4 py-2 rounded-xl font-extrabold"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
               mindenkie.vercel.app

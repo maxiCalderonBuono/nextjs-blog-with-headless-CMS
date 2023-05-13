@@ -37,6 +37,8 @@ export async function generateMetadata({
   const url = process.env.NEXT_PUBLIC_APP_URL;
 
   const ogUrl = new URL(`${url}/api/og`);
+
+  console.log(ogUrl);
   ogUrl.searchParams.set("heading", fields.title);
   ogUrl.searchParams.set("type", "Blog Post");
   ogUrl.searchParams.set("mode", "dark");
@@ -49,7 +51,7 @@ export async function generateMetadata({
       title: fields.title,
       description: fields.description,
       type: "article",
-      url: absoluteUrl(fields.slug),
+      url: `https://mindenkietest.vercel.app/blog/${slug}`,
       images: [
         {
           url: ogUrl.toString(),
