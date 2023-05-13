@@ -18,6 +18,56 @@ interface PostPageProps {
   };
 }
 
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const slug = params.slug;
+
+  const response = await client.getEntries({
+    content_type: "blog",
+    "fields.slug": slug,
+  });
+
+  const { fields, sys } = response.items[0];
+
+  if (!fields) {
+    return {};
+  }
+
+  const url = "https://mindenkie.vercel.app/";
+
+  const ogUrl = new URL(`${url}/api/og`);
+  ogUrl.searchParams.set("heading", fields.title);
+  ogUrl.searchParams.set("type", "Blog Post");
+  ogUrl.searchParams.set("mode", "dark");
+
+  return {
+    title: fields.title,
+    description: fields.description,
+
+    openGraph: {
+      title: fields.title,
+      description: fields.description,
+      type: "article",
+      url: absoluteUrl(fields.slug),
+      images: [
+        {
+          url: ogUrl.toString(),
+          width: 1200,
+          height: 630,
+          alt: fields.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fields.title,
+      description: fields.description,
+      images: [ogUrl.toString()],
+    },
+  };
+}
+
 const options = {
   renderNode: {
     [INLINES.HYPERLINK]: (node: Node, children: React.ReactNode) => {
