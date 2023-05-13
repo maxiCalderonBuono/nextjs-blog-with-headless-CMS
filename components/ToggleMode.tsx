@@ -10,15 +10,15 @@ const ToggleMode = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div className="relative flex items-center w-[26px] h-[26px]">
-      <Switch
-        checked={enabled}
-        onClick={() =>
-          theme === "dark" ? setTheme("light") : setTheme("dark")
-        }
-      >
+    <Switch
+      checked={enabled}
+      onChange={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
+      className="flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
+    >
+      <div className="relative w-[26px] h-[26px]">
         <Sun
-          mode={`transition transform absolute top-0 left-0 ${
+          mode={`transition transform absolute ${
             currentTheme === "light"
               ? "rotate-0 opacity-0"
               : "rotate-90 opacity-100"
@@ -26,14 +26,14 @@ const ToggleMode = () => {
         />
 
         <Moon
-          mode={`transition transform absolute top-0 left-0 ${
+          mode={`transition transform absolute ${
             currentTheme === "light"
               ? "rotate-0 opacity-100"
               : "rotate-90 opacity-0"
           }`}
         />
-      </Switch>
-    </div>
+      </div>
+    </Switch>
   );
 };
 

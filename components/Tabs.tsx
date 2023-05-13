@@ -42,8 +42,8 @@ const Tabs = ({ posts, onChange }: TabsProps) => {
   }
 
   return (
-    <div className="flex flex-col items-start gap-3 mx-8 my-8 shadow-xl md:flex-row">
-      <p className="opacity-80 md:hidden">¿Qué puedo leer?</p>
+    <div className="flex flex-col items-start gap-3 mx-8 my-8 dark:shadow-xl md:flex-row">
+      <p className=" opacity-80 md:hidden">¿Qué puedo leer?</p>
       {tabs.map((tab) => (
         <div key={tab} className="flex items-center flex-grow gap-2">
           <CheckCircle
@@ -53,8 +53,8 @@ const Tabs = ({ posts, onChange }: TabsProps) => {
           />
           <button
             type="button"
-            className={`text-2xl md:text-xl font-bold px-4 py-2 flex-grow ${
-              selectedCategory === tab ? "bg-gray-700 rounded-lg" : ""
+            className={`text-2xl md:text-xl font-bold px-4 py-2 flex-grow text-gray-800 dark:text-white focus:rounded-lg focus:outline-none focus:bg-gray-300 dark:focus:bg-gray-500 ${
+              selectedCategory === tab ? "bg-indigo-400 rounded-lg" : ""
             }`}
             onClick={() => handleCategoryChange(tab)}
           >
