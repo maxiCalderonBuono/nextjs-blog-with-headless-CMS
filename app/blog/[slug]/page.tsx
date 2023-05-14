@@ -42,7 +42,13 @@ export async function generateMetadata({
 
   const publishedDate = new Date(sys.createdAt);
 
-  const isPublished = publishedDate.toLocaleDateString("ar-AR");
+  const isPublished = publishedDate.toLocaleString("es-AR", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
 
   console.log(ogUrl);
   ogUrl.searchParams.set("heading", fields.title);

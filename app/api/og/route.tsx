@@ -28,12 +28,11 @@ export async function GET(req: Request) {
     const { mode } = values;
 
     const fontSize = heading.length > 100 ? "70px" : "100px";
+    const type = "blog post";
+    const published = "Martes";
 
     const currentDate = new Date();
     const currentYear = getYear(currentDate);
-
-    const blog = "BLOG POST";
-    const published = "2023-05-09T17:35:36.686Z";
 
     return new ImageResponse(
       (
@@ -57,10 +56,11 @@ export async function GET(req: Request) {
 
           <div tw="flex flex-col flex-1 py-10">
             <div
-              tw="flex text-xl uppercase font-bold tracking-tight text-white"
+              tw="flex text-xl font-bold tracking-tight text-white"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
-              {`${values.type} - Publicado el ${values.published}`}
+              <span tw="uppercase">{values.type}</span>
+              <span>{`- Publicado el ${values.published}`}</span>
             </div>
 
             <div
