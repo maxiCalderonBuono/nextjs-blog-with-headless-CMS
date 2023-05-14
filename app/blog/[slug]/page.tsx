@@ -28,7 +28,9 @@ export async function generateMetadata({
     "fields.slug": slug,
   });
 
-  const { fields } = response.items[0];
+  const { fields, sys } = response.items[0];
+
+  console.log(sys);
 
   if (!fields) {
     return {};
@@ -38,10 +40,14 @@ export async function generateMetadata({
 
   const ogUrl = new URL(`${url}/api/og`);
 
+  const publishedDate = new Date(sys.createdAt);
+
+  const isPublished = publishedDate.toLocaleDateString("ar-AR");
+
   console.log(ogUrl);
   ogUrl.searchParams.set("heading", fields.title);
   ogUrl.searchParams.set("type", "Blog Post");
-  ogUrl.searchParams.set("mode", "dark");
+  ogUrl.searchParams.set("published", isPublished);
 
   return {
     title: fields.title,

@@ -32,17 +32,20 @@ export async function GET(req: Request) {
     const currentDate = new Date();
     const currentYear = getYear(currentDate);
 
+    const blog = "BLOG POST";
+    const published = "2023-05-09T17:35:36.686Z";
+
     return new ImageResponse(
       (
         <div
-          tw="flex relative flex-col p-12 w-full h-full items-start"
+          tw="flex relative flex-col py-12 px-16 w-full h-full items-start"
           style={{
             color: "#000",
-            backgroundImage: "linear-gradient(to bottom, #7F9CF5, #b2cfd5)",
+            backgroundImage: "linear-gradient(to bottom, #2D3748, #1A202C)",
           }}
         >
           <p
-            tw="text-2xl font-bold uppercase"
+            tw="text-2xl font-bold uppercase text-white"
             style={{
               fontFamily: "Cal Sans",
               fontWeight: "bold",
@@ -54,13 +57,14 @@ export async function GET(req: Request) {
 
           <div tw="flex flex-col flex-1 py-10">
             <div
-              tw="flex text-xl uppercase font-bold tracking-tight"
+              tw="flex text-xl uppercase font-bold tracking-tight text-white"
               style={{ fontFamily: "Inter", fontWeight: "normal" }}
             >
-              {values.type}
+              {`${values.type} - Publicado el ${values.published}`}
             </div>
+
             <div
-              tw="flex leading-[1.1] text-[80px] font-bold"
+              tw="flex flex-grow items-center leading-[1.1] text-[80px] font-bold text-white"
               style={{
                 fontFamily: "Cal Sans",
                 fontWeight: "bold",
@@ -79,16 +83,16 @@ export async function GET(req: Request) {
               mindenkie.vercel.app
             </div>
             <div
-              tw="flex items-center text-xl"
+              tw="flex items-center text-xl text-white font-bold"
               style={{
                 fontFamily: "Inter",
-                fontWeight: "normal",
+                fontWeight: "bold",
                 display: "flex",
               }}
             >
               <span>Para tod@s- </span>
               <Baseline />
-              <p className="text-center">{`${currentYear} © `}</p>
+              <p>{`${currentYear} © `}</p>
             </div>
           </div>
         </div>
