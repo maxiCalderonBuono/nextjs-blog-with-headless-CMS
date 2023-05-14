@@ -53,8 +53,10 @@ const Tabs = ({ posts, onChange }: TabsProps) => {
           />
           <button
             type="button"
-            className={`text-2xl md:text-xl font-bold px-4 py-2 flex-grow text-gray-800 dark:text-white focus:rounded-lg focus:outline-none focus:bg-gray-300 dark:focus:bg-gray-500 ${
-              selectedCategory === tab ? "bg-indigo-400 rounded-lg" : ""
+            className={`text-2xl md:text-xl font-bold px-4 py-2 flex-grow  text-gray-800  dark:text-white rounded-lg  ${
+              selectedCategory === tab
+                ? "bg-indigo-400 focus-visible:outline-indigo-500 focus-visible:outline"
+                : "focus-visible:bg-gray-400 dark:focus-visible:bg-gray-500 focus-visible:outline-gray-500 focus-visible:outline-2"
             }`}
             onClick={() => handleCategoryChange(tab)}
           >

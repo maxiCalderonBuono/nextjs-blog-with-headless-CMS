@@ -7,6 +7,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx}",
   ],
+  variants: {
+    extend: {
+      backgroundColor: ["active"],
+    },
+  },
   darkMode: "class",
   theme: {
     extend: {

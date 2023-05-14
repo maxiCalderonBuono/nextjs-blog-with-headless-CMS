@@ -6,6 +6,7 @@ import Tabs from "~/components/Tabs";
 import PostList from "./PostList";
 import Grid from "./Grid";
 import { useFilterContext } from "./filter";
+import { ChevronRight, Link } from "lucide-react";
 
 interface HompeProps {
   data: Items[];
@@ -37,7 +38,7 @@ const Home = ({ data }: HompeProps) => {
       <h2 className="text-3xl font-bold uppercase md:text-4xl">
         Continuar leyendo
       </h2>
-      <PostList posts={matches} />
+      <PostList posts={matches} navigation={true} />
     </div>
   );
 };

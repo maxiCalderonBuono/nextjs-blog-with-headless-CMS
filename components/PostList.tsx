@@ -7,9 +7,10 @@ import { Card } from "./Card";
 
 interface PostListProps {
   posts: Items[];
+  navigation: boolean;
 }
 
-const PostList = ({ posts }: PostListProps) => {
+const PostList = ({ posts, navigation }: PostListProps) => {
   return (
     <section className="py-4">
       {posts.map((post) => (
@@ -19,14 +20,16 @@ const PostList = ({ posts }: PostListProps) => {
           <hr className="mt-2 md:hidden" />
         </div>
       ))}
-      {/* <Link
-        href="/posts"
-        className={`flex justify-end w-full py-5 font-bold ¿ text-indigo-400 text-md hover:scale-[102%] ${
-          options.show ? "" : "hidden"
-        }`}
+      <div
+        className={`flex justify-center py-5 ${navigation ? "" : "hidden"} `}
       >
-        Más <ArrowRight />
-      </Link> */}
+        <Link
+          href="/blog"
+          className="flex justify-center items-center w-fit px-4 py-2 rounded-md hover:bg-gray-800  font-bold ¿ text-indigo-400 text-lg hover:scale-[102%]"
+        >
+          Todos los posts <ArrowRight />
+        </Link>
+      </div>
     </section>
   );
 };

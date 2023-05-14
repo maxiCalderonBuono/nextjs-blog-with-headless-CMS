@@ -118,7 +118,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
       <Link
         href="/blog"
-        className="absolute left-[-200px] top-14 hidden xl:inline-flex"
+        className="absolute left-[-200px] top-14 hidden xl:inline-flex hover:bg-gray-800 px-4 py-2 rounded-md"
       >
         <ChevronLeft className="flex items-center" />
         Todos los posts
@@ -163,7 +163,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
       </section>
       <hr className="mt-12" />
       <div className="flex justify-center py-6 lg:py-10">
-        <Link href="/blog" className="flex items-center">
+        <Link
+          href="/blog"
+          className="flex items-center px-4 py-2 rounded-md hover:bg-gray-800"
+        >
           <ChevronLeft className="w-4 h-4 mr-2" />
           Todos los posts
         </Link>
