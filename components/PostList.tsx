@@ -7,7 +7,7 @@ import { Card } from "./Card";
 
 interface PostListProps {
   posts: Items[];
-  navigation: boolean;
+  navigation?: boolean;
 }
 
 const PostList = ({ posts, navigation }: PostListProps) => {
