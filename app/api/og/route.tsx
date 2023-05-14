@@ -28,8 +28,6 @@ export async function GET(req: Request) {
     const { mode } = values;
 
     const fontSize = heading.length > 100 ? "70px" : "100px";
-    const type = "blog post";
-    const published = "Martes";
 
     const currentDate = new Date();
     const currentYear = getYear(currentDate);
@@ -43,17 +41,19 @@ export async function GET(req: Request) {
             backgroundImage: "linear-gradient(to bottom, #2D3748, #1A202C)",
           }}
         >
-          <p
-            tw="text-2xl font-bold uppercase text-white"
-            style={{
-              fontFamily: "Cal Sans",
-              fontWeight: "bold",
-              fontStyle: "italic",
-            }}
-          >
-            Mindenkié
-          </p>
-
+          <div tw="flex items-center w-full">
+            <p
+              tw="text-2xl font-bold uppercase text-white"
+              style={{
+                fontFamily: "Cal Sans",
+                fontWeight: "bold",
+                fontStyle: "italic",
+              }}
+            >
+              Mindenkié
+            </p>
+            <div tw="flex-grow ml-12 h-[2px] bg-gray-400"></div>
+          </div>
           <div tw="flex flex-col flex-1 py-10">
             <div
               tw="flex text-xl font-bold tracking-tight text-white"
@@ -77,15 +77,15 @@ export async function GET(req: Request) {
           </div>
           <div tw="flex items-center w-full justify-between">
             <div
-              tw="flex text-xl bg-[#35a1f4] text-white px-4 py-2 rounded-xl font-extrabold"
-              style={{ fontFamily: "Inter", fontWeight: "normal" }}
+              tw="flex text-xl bg-[#35a1f4] text-gray-900 px-4 py-2 rounded-xl"
+              style={{ fontFamily: "Cal Sans", fontWeight: "normal" }}
             >
               mindenkie.vercel.app
             </div>
             <div
               tw="flex items-center text-xl text-white font-bold"
               style={{
-                fontFamily: "Inter",
+                fontFamily: "Cal Sans",
                 fontWeight: "bold",
                 display: "flex",
               }}
