@@ -30,8 +30,6 @@ export async function generateMetadata({
 
   const { fields, sys } = response.items[0];
 
-  console.log(sys);
-
   if (!fields) {
     return {};
   }
@@ -50,7 +48,6 @@ export async function generateMetadata({
     timeZone: "UTC",
   });
 
-  console.log(ogUrl);
   ogUrl.searchParams.set("heading", fields.title);
   ogUrl.searchParams.set("type", "Blog Post");
   ogUrl.searchParams.set("published", isPublished);
