@@ -1,55 +1,73 @@
 import React from "react";
-import { Fields } from "../types";
+import { Fields, ContentfulTypesSys } from "../types";
 import Image from "next/image";
 import Link from "next/link";
-import { TimeAgo } from "./TimeAgo";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, CalendarDays } from "lucide-react";
 import Balancer from "react-wrap-balancer";
+import { formatDate } from "~/lib/formatedDate";
+
+
+type PostData = {
+  content: Fields,
+  date: ContentfulTypesSys
+}
 
 interface ArticleProps {
-  attributes: Fields;
+  attributes: PostData
 }
 const HorizontalCard = ({ attributes }: ArticleProps) => {
+
+  const {content, date} = attributes
+
   return (
-    <Link href={`/blog/${attributes.slug}`}>
+    <Link href={`/blog/${content.slug}`}>
       <div className="relative rounded-lg bg-transparent hover:shadow-xl dark:shadow-gray-800 transition  ease-in-out hover:scale-[102%] w-full">
         <div className="flex flex-col w-full gap-3 px-2 py-5 overflow-hidden group hero-content sm:flex-row sm:justify-between">
           <div className="hidden w-1/5 lg:block">
-            {attributes.image && (
+            {content.image && (
               <div className="relative w-[95%] h-24 grow">
                 <Image
-                  src={attributes.image.fields.file.url}
+                  src={content.image.fields.file.url}
                   fill
-                  alt={attributes.title}
-                  className="rounded-lg "
+                  alt={content.title}
+                  className="object-cover rounded-lg "
                 />
               </div>
             )}
           </div>
 
-          <div className="flex flex-col w-full sm:w-5/6 lg:w-3/5">
-            <div className="flex flex-col justify-between gap-3">
-              <h3 className="w-full text-xl font-bold lg:text-2xl group-hover:text-indigo-300">
-                <Balancer>{attributes.title}</Balancer>
-              </h3>
-              {attributes.filter && (
-                <span className="bg-indigo-100 h-fit w-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 border border-indigo-400">
-                  {attributes.filter}
+          <div className="flex flex-col w-full lg:w-4/5">
+            <div className="flex flex-col justify-between gap-3 mb-2">
+                 {content.filter && (
+                <span className="bg-indigo-100 h-fit md:hidden w-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 border border-indigo-400">
+                  {content.filter}
                 </span>
               )}
+              <h3 className="w-full text-xl font-bold lg:text-2xl group-hover:text-indigo-300">
+                {content.title}
+              </h3>
+              <div className="flex items-center gap-3">
+                {content.filter && (
+                <span className="bg-indigo-100 hidden md:block h-fit w-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 border border-indigo-400">
+                  {content.filter}
+                </span>
+              )}
+                <CalendarDays />
+                    {formatDate(date.createdAt)}
+                    </div>
             </div>
 
-            <p className="hidden py-1 truncate lg:block text-1xl">
-              {attributes.description}
+            <p className= "py-1 truncate lg:block text-1xl">
+              {content.description}
             </p>
           </div>
-
-          <div className="flex flex-col items-end flex-shrink-0 w-1/7 lg:w-1/6">
-            {/* <TimeAgo timeStamp={attributes.createdAt} /> */}
-            <span className="absolute self-end hidden text-sm font-bold text-indigo-300 align-bottom transition-opacity delay-150 opacity-0 sm:flex bottom-3 right-3 group-hover:opacity-100">
-              Leer más <ArrowRight />
+ 
+   
+            <span className="absolute text-sm font-bold text-indigo-300 transition-opacity delay-150 opacity-0 sm:flex top-3 right-3 group-hover:opacity-100">
+              <ArrowUpRight />
             </span>
-          </div>
+       
+       
         </div>
       </div>
     </Link>

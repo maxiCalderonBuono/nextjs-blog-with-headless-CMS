@@ -36,11 +36,11 @@ const Home = ({ data }: HompeProps) => {
       </div>
       <Grid posts={matches} />
       <h2 className="text-3xl font-bold uppercase md:text-4xl">
-        Continuar leyendo
+        Recientes
       </h2>
       <PostList posts={matches} navigation={true} />
     </div>
-  );
+  )
 };
 
 export default Home;
