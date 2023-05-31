@@ -6,11 +6,11 @@ import { formatDate } from "~/lib/formatedDate";
 import profile from "../../../assets/images/profile.jpg";
 
 import type { Metadata } from "next";
-import { absoluteUrl } from "~/lib/utils";
 import { client } from "~/lib/contentful/client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { INLINES, Node, BLOCKS } from "@contentful/rich-text-types";
 import React from "react";
+import { notFound } from "next/navigation";
 
 interface PostPageProps {
   params: {
@@ -23,16 +23,16 @@ export async function generateMetadata({
 }: PostPageProps): Promise<Metadata> {
   const slug = params.slug;
 
-  const response = await client.getEntries({
+  const {items} = await client.getEntries({
     content_type: "blog",
     "fields.slug": slug,
   });
+ 
 
-  const { fields, sys } = response.items[0];
+  if(items.length  === 0) return {}
 
-  if (!fields) {
-    return {};
-  }
+  const { fields, sys } = items[0];
+
 
   const url = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -104,12 +104,19 @@ const options = {
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
 
-  const response = await client.getEntries({
+  const {items} = await client.getEntries({
     content_type: "blog",
     "fields.slug": slug,
   });
 
-  const { fields, sys } = response.items[0];
+
+  if(items.length  === 0) {
+    notFound()
+  }
+
+  
+
+  const { fields, sys } = items[0];
 
   return (
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
