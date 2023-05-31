@@ -16,7 +16,7 @@ const NotFound = () => {
         <ChevronLeft className="flex items-center" />
         Todos los posts
       </Link>
-      <div className='relative flex h-48 w-80 lg:h-52 lg:w-96'>
+      <div className='relative flex h-40 w-80 lg:h-44 lg:w-96'>
         <Image src={notPost} alt='not found robot' fill />
       </div>
     </section>
