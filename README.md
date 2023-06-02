@@ -1,7 +1,7 @@
 # Next.Js Blog using a headless CMS
 
 > **Warning**
-> This app is a work in progress. I'm building (trying) this in public. You can follow the progress on Twitter [@maxcal](https://twitter.com/mcalderonbuono).
+> Version V1 is officially up and running. I'm building (trying) this in public. You can follow the progress on Twitter [@maxcal](https://twitter.com/mcalderonbuono).
 
 For this project, I'm stepping into the exciting world of freelance development, building a blog using Next.js and a headless CMS for a friend, Andy, whom I met during a temporary work experience in Denmark.
 
