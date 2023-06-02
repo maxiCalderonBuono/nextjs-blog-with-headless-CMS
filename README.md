@@ -19,22 +19,28 @@ Soon...
 
 ## Tech Stack
 
+- Typescript,
+- Zod,
 - Next.Js,
-- Typescript
 - TailwindCSS
-- Strapi
-- clx
+- HeadlessUI,
+- Contentful,
+- clx - tailwind-merge
 - Lucide React
-- Counting...
 
 ## Features
 
-- [ ] Basic Layout
-- [ ] Integrate Strapi
-- [ ] Responsive styles
-- [ ] Add metadata
-- [ ] Dark mode
-- [ ] Add tests
+- Integration with Contentful.
+- Responsive styles - Dark Mode.
+- Automatic deployment on Vercel using webhooks.
+- Edge functions for dynamic Open Graph.
+
+## Next steps 
+
+- [ ] Internationalization.
+- [ ] Media sharing.
+- [ ] Reactions.
+
 
 ## Run Locally
 
@@ -63,6 +69,10 @@ Start the server
 ```
 
 ## Environment Variables
+
+NEXT_PUBLIC_APP_URL = " .... "
+NEXT_PUBLIC_APP_URL= " .... "
+NEXT_PUBLIC_APP_URL= " .... "
 
 ## Authors
 
