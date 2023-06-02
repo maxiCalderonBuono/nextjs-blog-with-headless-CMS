@@ -71,9 +71,15 @@ Start the server
 
 ## Environment Variables
 
+```bash
 NEXT_PUBLIC_APP_URL = " .... "
+```
+```bash
 NEXT_PUBLIC_APP_URL= " .... "
+```
+```bash
 NEXT_PUBLIC_APP_URL= " .... "
+```
 
 ## Authors
 
