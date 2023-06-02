@@ -11,7 +11,8 @@ The blog will serve as a platform to express a unique perspective on the world, 
 
 ## Demo
 
-Soon...
+[Mindenkié](https://mindenkie.vercel.app/)
+
 
 ## Screenshots
 
