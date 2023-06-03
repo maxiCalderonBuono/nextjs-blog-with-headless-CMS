@@ -27,6 +27,8 @@ export async function GET(req: Request) {
 
     const { mode } = values;
 
+    const postImage = values.postImage
+
     const fontSize = heading.length > 100 ? "70px" : "100px";
 
     const currentDate = new Date();
@@ -35,18 +37,23 @@ export async function GET(req: Request) {
     return new ImageResponse(
       (
         <div
-          tw="flex relative flex-col py-12 px-16 w-full h-full items-start"
+          tw="flex h-full w-full  "
           style={{
             color: "#000",
-            backgroundImage: "linear-gradient(to bottom, #2D3748, #1A202C)",
+            backgroundImage: `url(${postImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "right"
           }}
         >
+          <div tw="flex flex-col items-start w-full h-full py-12 px-16"    style={{
+            color: "#000",
+            backgroundImage: "linear-gradient(to right, rgba(31,32,40,1) 40%, rgba(31,32,40,0.9) 60%, rgba(31,32,40,0.8) 70%, rgba(31,32,40,0.7) 80%, rgba(31,32,40,0.6))",
+          }}>
           <div tw="flex items-center w-full">
             <p
-              tw="text-2xl font-bold uppercase text-white"
+              tw="text-3xl font-extrabold uppercase text-white"
               style={{
                 fontFamily: "Cal Sans",
-                fontWeight: "bold",
                 fontStyle: "italic",
               }}
             >
@@ -69,9 +76,10 @@ export async function GET(req: Request) {
                 fontFamily: "Cal Sans",
                 fontWeight: "bold",
                 marginLeft: "-3px",
-                // fontSize,
+                fontSize,
               }}
             >
+        
               {heading}
             </div>
           </div>
@@ -94,6 +102,7 @@ export async function GET(req: Request) {
               <Baseline />
               <p>{`${currentYear} © `}</p>
             </div>
+          </div>
           </div>
         </div>
       ),

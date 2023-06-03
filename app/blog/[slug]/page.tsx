@@ -48,9 +48,12 @@ export async function generateMetadata({
     timeZone: "UTC",
   });
 
+  const imageUrl = fields.image.fields.file.url
+
   ogUrl.searchParams.set("heading", fields.title);
   ogUrl.searchParams.set("type", "Blog Post");
   ogUrl.searchParams.set("published", isPublished);
+  ogUrl.searchParams.set("postImage", imageUrl);
 
   return {
     title: fields.title,
