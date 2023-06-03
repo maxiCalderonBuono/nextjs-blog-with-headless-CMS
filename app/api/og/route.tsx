@@ -34,13 +34,14 @@ export async function GET(req: Request) {
     const currentDate = new Date();
     const currentYear = getYear(currentDate);
 
+
     return new ImageResponse(
       (
         <div
           tw="flex h-full w-full  "
           style={{
             color: "#000",
-            backgroundImage: `url(${postImage})`,
+            backgroundImage: `url(https:${postImage})`,
             backgroundSize: "cover",
             backgroundPosition: "right"
           }}
