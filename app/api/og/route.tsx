@@ -29,7 +29,7 @@ export async function GET(req: Request) {
 
     const postImage = values.postImage
 
-    const fontSize = heading.length > 100 ? "70px" : "100px";
+    const fontSize = heading.length > 60 ? "70px" : "100px";
 
     const currentDate = new Date();
     const currentYear = getYear(currentDate);
@@ -80,8 +80,8 @@ export async function GET(req: Request) {
                 fontSize,
               }}
             >
-        
-              {heading}
+   
+               {heading} 
             </div>
           </div>
           <div tw="flex items-center w-full justify-between">
