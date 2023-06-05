@@ -112,6 +112,7 @@ const options = {
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
+  const url = process.env.NEXT_PUBLIC_APP_URL;
 
   const response = await client.getEntries({
     content_type: "blog",
@@ -166,11 +167,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <p className="p-4 my-6 border border-l-4 border-gray-400 rounded-md ">
         {fields.description}
       </p>
-      <SharePost url={"https://mindenkie.vercel.app/blog/cfk-2023"} title={fields.title} />
+      <SharePost url={`${url}/blog/${slug}`} title={fields.title} />
       <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2">
         {documentToReactComponents(fields.content, options)}
       </section>
-      <SharePost url={"https://mindenkie.vercel.app/blog/cfk-2023"} title={fields.title}/>
+      <SharePost url={`${url}/blog/${slug}`} title={fields.title}/>
      
       <div className="flex justify-center py-6 lg:py-10">
         <Link
