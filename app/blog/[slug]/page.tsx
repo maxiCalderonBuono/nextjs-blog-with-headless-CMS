@@ -1,3 +1,4 @@
+
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +12,11 @@ import { client } from "~/lib/contentful/client";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { INLINES, Node, BLOCKS } from "@contentful/rich-text-types";
 import React from "react";
+import SharePost from "~/components/SharePost";
+
+
+
+
 
 interface PostPageProps {
   params: {
@@ -115,14 +121,16 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { fields, sys } = response.items[0];
 
   return (
+    
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
       <Link
         href="/blog"
-        className="absolute left-[-200px] top-14 hidden xl:inline-flex hover:bg-gray-800 px-4 py-2 rounded-md"
+        className="absolute h-96 left-[-200px] top-14 hidden xl:inline-flex hover:bg-gray-800 px-4 py-2 rounded-md"
       >
         <ChevronLeft className="flex items-center" />
         Todos los posts
       </Link>
+
 
       {sys.createdAt && (
         <time dateTime={sys.createdAt} className="block text-sm opacity-60">
@@ -158,10 +166,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <p className="p-4 my-6 border border-l-4 border-gray-400 rounded-md ">
         {fields.description}
       </p>
+      <SharePost url={"https://mindenkie.vercel.app/blog/cfk-2023"} title={fields.title} />
       <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2">
         {documentToReactComponents(fields.content, options)}
       </section>
-      <hr className="mt-12" />
+      <SharePost url={"https://mindenkie.vercel.app/blog/cfk-2023"} title={fields.title}/>
+     
       <div className="flex justify-center py-6 lg:py-10">
         <Link
           href="/blog"
@@ -172,5 +182,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </Link>
       </div>
     </article>
+      
+        
   );
 }
