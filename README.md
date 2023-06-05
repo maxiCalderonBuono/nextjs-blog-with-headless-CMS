@@ -1,7 +1,7 @@
 # Next.Js Blog using a headless CMS
 
 > **Warning**
-> This app is a work in progress. I'm building (trying) this in public. You can follow the progress on Twitter [@maxcal](https://twitter.com/mcalderonbuono).
+> Version V1 is officially up and running. I'm building (trying) this in public. You can follow the progress on Twitter [@maxcal](https://twitter.com/mcalderonbuono).
 
 For this project, I'm stepping into the exciting world of freelance development, building a blog using Next.js and a headless CMS for a friend, Andy, whom I met during a temporary work experience in Denmark.
 
@@ -11,7 +11,8 @@ The blog will serve as a platform to express a unique perspective on the world, 
 
 ## Demo
 
-Soon...
+[Mindenkié](https://mindenkie.vercel.app/)
+
 
 ## Screenshots
 
@@ -19,22 +20,28 @@ Soon...
 
 ## Tech Stack
 
+- Typescript,
+- Zod,
 - Next.Js,
-- Typescript
 - TailwindCSS
-- Strapi
-- clx
+- HeadlessUI,
+- Contentful,
+- clx - tailwind-merge
 - Lucide React
-- Counting...
 
 ## Features
 
-- [ ] Basic Layout
-- [ ] Integrate Strapi
-- [ ] Responsive styles
-- [ ] Add metadata
-- [ ] Dark mode
-- [ ] Add tests
+- Integration with Contentful.
+- Responsive styles - Dark Mode.
+- Automatic deployment on Vercel using webhooks.
+- Edge functions for dynamic Open Graph.
+
+## Next steps 
+
+- [ ] Internationalization.
+- [ ] Media sharing.
+- [ ] Reactions.
+
 
 ## Run Locally
 
@@ -63,6 +70,16 @@ Start the server
 ```
 
 ## Environment Variables
+
+```bash
+NEXT_PUBLIC_APP_URL = " .... "
+```
+```bash
+NEXT_PUBLIC_APP_URL= " .... "
+```
+```bash
+NEXT_PUBLIC_APP_URL= " .... "
+```
 
 ## Authors
 
