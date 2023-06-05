@@ -12,6 +12,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { INLINES, Node, BLOCKS } from "@contentful/rich-text-types";
 import React from "react";
 import SharePost from "~/components/SharePost";
+import { notFound } from "next/navigation";
 
 
 
