@@ -15,6 +15,11 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        whatsapp: "#28D146",
+        twitter: "#1DA1F2",
+        facebook: "#4267B2"
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

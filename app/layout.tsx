@@ -6,6 +6,7 @@ import ThemeProvider from "~/components/ThemeProvider";
 import SiteFooter from "~/components/SiteFooter";
 import { FiltersProvider } from "~/components/filter";
 
+
 const inter = localFont({
   src: "../assets/fonts/Inter-Regular.ttf",
   variable: "--font-inter",
@@ -73,10 +74,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  // verification: {
-  //   google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
-  //   yandex: "14d2e73487fa6c71",
-  // },
+
 };
 
 export default async function RootLayout({
@@ -91,8 +89,10 @@ export default async function RootLayout({
           <FiltersProvider>
             {/* @ts-expect-error Server Component */}
             <MainNavBar />
+           
             <main className="flex-grow">{children}</main>
-            <SiteFooter />
+           
+            <SiteFooter />       
           </FiltersProvider>
         </ThemeProvider>
       </body>
