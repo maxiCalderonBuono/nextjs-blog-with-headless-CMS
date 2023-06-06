@@ -14,17 +14,17 @@ export default async function MainNavBar() {
   const data = response.items;
 
   return (
-    <nav className="px-5 py-4 shadow-lg dark:bg-gray-900/70">
+    <nav className="px-3 py-4 shadow-lg md:px-5 dark:bg-gray-900/70">
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center px-4 py-2 space-x-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2">
+          <Link href="/" className="flex items-center p-2 space-x-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2">
             <Baseline />
             <span className="text-lg font-bold ">Mindenkié</span>
           </Link>
 
           <NavLinks />
         </div>
-        <div className="flex items-center gap-3 pr-4">
+        <div className="flex items-center gap-3">
           <ToggleMode />
           <SlideOver posts={data} />
         </div>

@@ -27,8 +27,8 @@ const SlideOver = ({ posts }: SliderProps) => {
 
   return (
     <div className="flex items-center md:hidden">
-      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true">
-        <div className="relative flex items-center hover:scale-105 hover:opacity-90 active:scale-95">
+      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true" className="p-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2">
+        <div className="relative flex items-center hover:scale-105 hover:opacity-90 active:scale-95 ">
           <ClosedMenu />
         </div>
       </button>
@@ -82,7 +82,7 @@ const SlideOver = ({ posts }: SliderProps) => {
                             onClick={() => setOpen(false)}
                           >
                             <span className="sr-only">Close panel</span>
-                            <div className="relative flex items-center">
+                            <div className="relative flex items-center ">
                               <OpenMenu />
                             </div>
                           </button>
