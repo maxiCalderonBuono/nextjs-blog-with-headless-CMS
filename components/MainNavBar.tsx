@@ -24,7 +24,7 @@ export default async function MainNavBar() {
 
           <NavLinks />
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pr-4">
           <ToggleMode />
           <SlideOver posts={data} />
         </div>
