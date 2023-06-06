@@ -13,7 +13,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
     <article>
       <Link
         href={`/blog/${attributes.slug}`}
-        className="flex flex-col space-y-6 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2"
+        className="flex flex-col space-y-6 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
       >
         <div className="group  [perspective:1000px]">
           <div className="relative aspect-video h-full w-full rounded-xl  transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">

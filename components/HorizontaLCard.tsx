@@ -20,7 +20,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
   const {content, date} = attributes
 
   return (
-    <Link href={`/blog/${content.slug}`} className="block rounded-md focus:outline-indigo-500 focus:outline focus:outline-2">
+    <Link href={`/blog/${content.slug}`} className="block rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2">
       <div className="relative rounded-lg bg-transparent hover:shadow-xl dark:shadow-gray-800 transition  ease-in-out hover:scale-[102%] w-full">
         <div className="flex flex-col w-full gap-3 px-2 py-5 overflow-hidden group hero-content sm:flex-row sm:justify-between">
           <div className="hidden w-1/5 lg:block">

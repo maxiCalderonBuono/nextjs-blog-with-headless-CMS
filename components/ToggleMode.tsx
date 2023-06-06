@@ -13,7 +13,7 @@ const ToggleMode = () => {
     <Switch
       checked={enabled}
       onChange={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
-      className="flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      className="flex items-center justify-center p-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
       onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
     >
       <div className="relative md:w-[26px] md:h-[26px] w-6 h-6">

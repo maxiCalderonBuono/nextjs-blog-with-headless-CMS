@@ -133,7 +133,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
       <Link
         href="/blog"
-        className="absolute left-[-200px] top-14 hidden xl:inline-flex hover:bg-gray-800 px-4 py-2  rounded-md focus:outline-indigo-500 focus:outline focus:outline-2"
+        className="absolute left-[-200px] top-14 hidden xl:inline-flex dark:hover:bg-gray-800 hover:bg-gray-200 px-4 py-2  rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
       >
         <ChevronLeft className="flex items-center" />
         Todos los posts
@@ -183,7 +183,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <div className="flex justify-center w-full mt-8">
         <Link
         href="/blog"
-        className="flex px-4 py-2 rounded-md hover:bg-gray-800 focus:outline-indigo-500 focus:outline focus:outline-2 flex-nowrap"
+        className="flex px-4 py-2 rounded-md dark:hover:bg-gray-800 hover:bg-gray-200 focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 flex-nowrap"
       >
         <ChevronLeft className="-ml-[9px]"/>
         Todos los posts
