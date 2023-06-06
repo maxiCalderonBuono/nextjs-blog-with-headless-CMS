@@ -37,7 +37,7 @@ const Tabs = ({ posts, onChange }: TabsProps) => {
     return Array.from(buffer);
   }, [posts]);
 
-  const tabs = tags.length > 2 ? tags : null;
+ 
 
   function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
@@ -46,24 +46,24 @@ const Tabs = ({ posts, onChange }: TabsProps) => {
   return (
     <div className="flex flex-col items-start gap-3 mx-8 my-8 dark:shadow-xl md:flex-row">
       <p className=" opacity-80 md:hidden">¿Qué puedo leer?</p>
-      {tabs &&
-        tabs.map((tab) => (
-          <div key={tab} className="flex items-center flex-grow gap-2">
+      {
+        tags.map((tag) => (
+          <div key={tag} className={`items-center flex-grow  gap-2 ${tags.length > 2 ? "flex" : "hidden"}`}>
             <CheckCircle
               className={`md:hidden ${
-                selectedCategory === tab ? "text-green-400" : "opacity-0"
+                selectedCategory === tag ? "text-green-400" : "opacity-0"
               } `}
             />
             <button
               type="button"
               className={`text-2xl md:text-xl font-bold px-4 py-2 flex-grow  text-gray-800  dark:text-white rounded-lg  ${
-                selectedCategory === tab
+                selectedCategory === tag
                   ? "bg-indigo-400 focus-visible:outline-indigo-500 focus-visible:outline"
                   : "focus-visible:bg-gray-400 dark:focus-visible:bg-gray-500 focus-visible:outline-gray-500 focus-visible:outline-2"
               }`}
-              onClick={() => handleCategoryChange(tab)}
+              onClick={() => handleCategoryChange(tag)}
             >
-              {tab}
+              {tag}
             </button>
           </div>
         ))}

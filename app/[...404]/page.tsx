@@ -1,5 +1,5 @@
 import React from 'react'
-import notPost from "../assets/images/notPost.png";
+import notPost from "../../assets/images/notPost.png";
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
