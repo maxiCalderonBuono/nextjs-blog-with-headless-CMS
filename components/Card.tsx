@@ -5,14 +5,15 @@ import Link from "next/link";
 
 interface ArticleProps {
   attributes: Fields;
+  textSize: string
 }
 
-export const Card = ({ attributes }: ArticleProps) => {
+export const Card = ({ attributes, textSize }: ArticleProps) => {
   return (
     <article>
       <Link
         href={`/blog/${attributes.slug}`}
-        className="flex flex-col space-y-6 "
+        className="flex flex-col space-y-6 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2"
       >
         <div className="group  [perspective:1000px]">
           <div className="relative aspect-video h-full w-full rounded-xl  transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -38,7 +39,7 @@ export const Card = ({ attributes }: ArticleProps) => {
           </div>
         </div>
 
-        <h2 className="text-2xl font-extrabold font-heading">
+        <h2 className={`${textSize} font-extrabold font-heading`}>
           {attributes.title}
         </h2>
       </Link>

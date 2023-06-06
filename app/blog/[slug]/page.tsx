@@ -133,7 +133,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
       <Link
         href="/blog"
-        className="absolute h-96 left-[-200px] top-14 hidden xl:inline-flex hover:bg-gray-800 px-4 py-2 rounded-md"
+        className="absolute left-[-200px] top-14 hidden xl:inline-flex hover:bg-gray-800 px-4 py-2  rounded-md focus:outline-indigo-500 focus:outline focus:outline-2"
       >
         <ChevronLeft className="flex items-center" />
         Todos los posts
@@ -180,15 +180,16 @@ export default async function Post({ params }: { params: { slug: string } }) {
       </section>
       <SharePost url={`${url}/blog/${slug}`} title={fields.title}/>
      
-      <div className="flex justify-center py-6 lg:py-10">
+      <div className="flex justify-center w-full mt-8">
         <Link
-          href="/blog"
-          className="flex items-center px-4 py-2 rounded-md hover:bg-gray-800"
-        >
-          <ChevronLeft className="w-4 h-4 mr-2" />
-          Todos los posts
-        </Link>
+        href="/blog"
+        className="px-4 py-2 rounded-md xl:inline-flex hover:bg-gray-800 focus:outline-indigo-500 focus:outline focus:outline-2"
+      >
+        <ChevronLeft className="-ml-[9px]"/>
+        Todos los posts
+      </Link>
       </div>
+      
     </article>
       
         

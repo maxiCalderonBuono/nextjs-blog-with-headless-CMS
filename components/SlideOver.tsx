@@ -27,13 +27,13 @@ const SlideOver = ({ posts }: SliderProps) => {
 
   return (
     <div className="flex items-center md:hidden">
-      <button type="button" onClick={() => setOpen(true)}>
+      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true">
         <div className="relative flex items-center hover:scale-105 hover:opacity-90 active:scale-95">
           <ClosedMenu />
         </div>
       </button>
-      <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={setOpen}>
+      <Transition.Root show={open} as={Fragment} >
+        <Dialog as="div" className="relative z-10" onClose={setOpen} id="slider-over-menu" aria-orientation="horizontal">
           <Transition.Child
             as={Fragment}
             enter="ease-in-out duration-500"
@@ -63,6 +63,7 @@ const SlideOver = ({ posts }: SliderProps) => {
                       <div className="flex justify-between px-8 py-5 sm:px-6">
                         <button
                           type="button"
+                          aria-expanded={open}
                           onClick={() => setOpen(false)}
                           tabIndex={-1}
                         >
@@ -122,3 +123,5 @@ const SlideOver = ({ posts }: SliderProps) => {
 };
 
 export default SlideOver;
+
+  

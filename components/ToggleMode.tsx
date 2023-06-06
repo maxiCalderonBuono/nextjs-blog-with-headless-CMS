@@ -16,7 +16,7 @@ const ToggleMode = () => {
       className="flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
       onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
     >
-      <div className="relative w-[26px] h-[26px]">
+      <div className="relative md:w-[26px] md:h-[26px] w-6 h-6">
         <Sun
           mode={`transition transform absolute ${
             currentTheme === "light"

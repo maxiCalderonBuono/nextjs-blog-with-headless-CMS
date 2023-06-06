@@ -1,6 +1,6 @@
-export const Sun = ({ mode }: { mode?: string }) => (
+export const Sun = ({ mode, }: { mode?: string }) => (
   <svg
-    className={`w-[26px] h-[26px] ${mode}`}
+    className={`md:w-[26px] md:h-[26px] w-[24px] h-[24px] ${mode}`}
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -11,7 +11,7 @@ export const Sun = ({ mode }: { mode?: string }) => (
 
 export const Moon = ({ mode }: { mode?: string }) => (
   <svg
-    className={`w-[26px] h-[26px] ${mode}`}
+    className={`md:w-[26px] md:h-[26px] w-[24px] h-[24px] ${mode}`}
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -92,8 +92,8 @@ export const chevronLeft = () => (
 export const LinkIcon = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width="28"
+      height="28"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
@@ -110,8 +110,8 @@ export const LinkIcon = () => (
 export const Whatsapp = ({className}: {className: string}) => (
       <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width="28"
+      height="28"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
@@ -129,8 +129,8 @@ export const Whatsapp = ({className}: {className: string}) => (
 export const Facebook = ({className}: {className: string}) => (
       <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width="28"
+      height="28"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
@@ -147,8 +147,8 @@ export const Facebook = ({className}: {className: string}) => (
 export const Twitter = ({className}: {className: string}) => (
       <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width="28"
+      height="28"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"

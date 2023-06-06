@@ -14,7 +14,7 @@ const PostList = ({ posts, navigation }: PostListProps) => {
   return (
     <section className="py-4">
       {posts.map((post) => (
-        <div key={post.sys.id}>
+        <div key={post.sys.id} >
           <HorizontalCard attributes={{content: post.fields, date:post.sys}} />
 
           <hr className="mt-2 md:hidden" />
@@ -25,7 +25,7 @@ const PostList = ({ posts, navigation }: PostListProps) => {
       >
         <Link
           href="/blog"
-          className="flex justify-center items-center w-fit px-4 py-2 rounded-md hover:bg-gray-800  font-bold ¿ text-indigo-400 text-lg hover:scale-[102%]"
+          className="flex justify-center items-center w-fit px-4 py-2 rounded-md hover:bg-gray-800  font-bold ¿ text-indigo-400 text-lg hover:scale-[102%] focus:outline-indigo-500 focus:outline focus:outline-2"
         >
           Todos los posts <ArrowRight />
         </Link>
