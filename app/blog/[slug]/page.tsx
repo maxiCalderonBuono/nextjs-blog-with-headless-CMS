@@ -183,7 +183,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <div className="flex justify-center w-full mt-8">
         <Link
         href="/blog"
-        className="px-4 py-2 rounded-md xl:inline-flex hover:bg-gray-800 focus:outline-indigo-500 focus:outline focus:outline-2"
+        className="flex px-4 py-2 rounded-md hover:bg-gray-800 focus:outline-indigo-500 focus:outline focus:outline-2 flex-nowrap"
       >
         <ChevronLeft className="-ml-[9px]"/>
         Todos los posts

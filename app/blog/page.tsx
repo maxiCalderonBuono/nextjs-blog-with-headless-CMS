@@ -18,7 +18,7 @@ const BlogPage = async () => {
   const data = response.items;
 
   return (
-    <main className="max-w-5xl px-6 py-10 mx-auto ">
+    <main className="max-w-6xl px-6 py-10 mx-auto ">
       <h2 className="text-3xl font-bold text-center uppercase lg:text-5xl font-heading md:text-left">
         Todos los artículos
       </h2>
