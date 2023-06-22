@@ -43,6 +43,7 @@ const Tabs = ({ posts, onChange }: TabsProps) => {
     return classes.filter(Boolean).join(" ");
   }
 
+
   return (
     <div className="flex flex-col items-start gap-3 mx-8 my-8 dark:shadow-xl md:flex-row">
       <p className=" opacity-80 md:hidden">¿Qué puedo leer?</p>
