@@ -8,6 +8,7 @@ import Grid from "./Grid";
 import { useFilterContext } from "./filter";
 import { ChevronRight, Link } from "lucide-react";
 
+
 interface HompeProps {
   data: Items[];
 }
@@ -26,7 +27,9 @@ const Home = ({ data }: HompeProps) => {
       }
     }
 
-    return matches;
+     const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
+
+    return sortedPosts;
   }, [filters, data]);
 
   return (
