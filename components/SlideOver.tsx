@@ -2,7 +2,7 @@
 
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ClosedMenu, OpenMenu } from "~/utils/Icons";
+import { ClosedMenu, Instagram, OpenMenu } from "~/utils/Icons";
 import Link from "next/link";
 import Tabs from "./Tabs";
 import useWindowSize from "../hooks/useWindowSize";
@@ -75,6 +75,9 @@ const SlideOver = ({ posts }: SliderProps) => {
                           </Link>
                         </button>
                         <div className="flex items-center gap-2">
+                          <Link href="https://www.instagram.com/mindenkie/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50">
+                            <Instagram />
+                          </Link>
                           <ToggleMode />
                           <button
                             type="button"
@@ -124,4 +127,3 @@ const SlideOver = ({ posts }: SliderProps) => {
 
 export default SlideOver;
 
-  

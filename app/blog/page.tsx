@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 // interface PostData {
 //   data: Post[];
 // }
+const a = "he"
 
 const BlogPage = async () => {
   const response = await client.getEntries({ content_type: "blog" });

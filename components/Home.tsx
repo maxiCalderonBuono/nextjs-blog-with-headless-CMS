@@ -27,13 +27,13 @@ const Home = ({ data }: HompeProps) => {
       }
     }
 
-     const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
+    const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
 
     return sortedPosts;
   }, [filters, data]);
 
   return (
-    <div className="w-full max-w-5xl px-6">
+    <div className="flex flex-col w-full max-w-5xl px-6">
       <div className="hidden md:block">
         <Tabs posts={data} />
       </div>

@@ -16,7 +16,7 @@ const NavLinks = () => {
         <Link
           key={navlink.name}
           href={navlink.path}
-          className="hidden p-2 text-lg rounded-md sm:inline-block focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
+          className="hidden p-2 text-lg rounded-md sm:inline-block focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50"
         >
           {navlink.name}
         </Link>

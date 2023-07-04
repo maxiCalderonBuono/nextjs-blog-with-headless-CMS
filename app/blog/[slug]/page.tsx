@@ -13,6 +13,11 @@ import { INLINES, Node, BLOCKS } from "@contentful/rich-text-types";
 import React from "react";
 import SharePost from "~/components/SharePost";
 import { notFound } from "next/navigation";
+import { Views } from "~/utils/Icons";
+import ViewCounter from "./view-counter";
+import getViewsCount from "~/lib/getViewsCount";
+
+
 
 
 
@@ -29,13 +34,13 @@ export async function generateMetadata({
 }: PostPageProps): Promise<Metadata> {
   const slug = params.slug;
 
-  const {items} = await client.getEntries({
+  const { items } = await client.getEntries({
     content_type: "blog",
     "fields.slug": slug,
   });
- 
 
-  if(items.length  === 0) return {}
+
+  if (items.length === 0) return {}
 
   const { fields, sys } = items[0];
 
@@ -114,23 +119,28 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const url = process.env.NEXT_PUBLIC_APP_URL;
 
-  const {items} = await client.getEntries({
+  const { total } = await getViewsCount(slug)
+
+  const { items } = await client.getEntries({
     content_type: "blog",
     "fields.slug": slug,
   });
 
 
-  if(items.length  === 0) {
+  if (items.length === 0) {
     notFound()
   }
 
-  
+
 
   const { fields, sys } = items[0];
 
   return (
-    
+
+
     <article className="relative max-w-3xl px-6 py-10 mx-auto">
+
+
       <Link
         href="/blog"
         className="absolute left-[-200px] top-14 hidden xl:inline-flex dark:hover:bg-gray-800 hover:bg-gray-200 px-4 py-2  rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
@@ -148,19 +158,22 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">
         {fields.title}
       </h1>
-      <div className="flex items-center my-3 space-x-2 text-md">
-        <Image
-          src={profile}
-          alt="El escritor de Mindenkié"
-          width={44}
-          height={44}
-          className="bg-indigo-300 rounded-full h-11 w-11"
-        />
-        <div className="flex-1 leading-tight text-left">
-          <p className="font-bold">Sultano</p>
+      <div className="flex items-center gap-3">
+        <div className="flex items-center my-3 space-x-2 text-md">
+          <Image
+            src={profile}
+            alt="El escritor de Mindenkié"
+            width={44}
+            height={44}
+            className="bg-indigo-300 rounded-full h-11 w-11"
+          />
+          <div className="flex-1 leading-tight text-left">
+            <p className="font-bold">Sultano</p>
+          </div>
         </div>
-      </div>
+        <ViewCounter total={total} slug={slug} />
 
+      </div>
       {fields.image && (
         <Image
           src={fields.image.fields.file.url}
@@ -178,20 +191,20 @@ export default async function Post({ params }: { params: { slug: string } }) {
       <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2">
         {documentToReactComponents(fields.content, options)}
       </section>
-      <SharePost url={`${url}/blog/${slug}`} title={fields.title}/>
-     
+      <SharePost url={`${url}/blog/${slug}`} title={fields.title} />
+
       <div className="flex justify-center w-full mt-8">
         <Link
-        href="/blog"
-        className="flex px-4 py-2 rounded-md dark:hover:bg-gray-800 hover:bg-gray-200 focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 flex-nowrap"
-      >
-        <ChevronLeft className="-ml-[9px]"/>
-        Todos los posts
-      </Link>
+          href="/blog"
+          className="flex px-4 py-2 rounded-md dark:hover:bg-gray-800 hover:bg-gray-200 focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 flex-nowrap"
+        >
+          <ChevronLeft className="-ml-[9px]" />
+          Todos los posts
+        </Link>
       </div>
-      
+
     </article>
-      
-        
+
+
   );
 }

@@ -7,6 +7,7 @@ import getAllPosts from "~/lib/getAllPosts";
 import NavLinks from "./NavlLinks";
 
 import { client } from "~/lib/contentful/client";
+import { Instagram } from "~/utils/Icons";
 
 export default async function MainNavBar() {
   const response = await client.getEntries({ content_type: "blog" });
@@ -17,7 +18,7 @@ export default async function MainNavBar() {
     <nav className="px-3 py-4 shadow-lg md:px-5 dark:bg-gray-900/70">
       <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2">
+          <Link href="/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 dark:hover:bg-slate-800/50 hover:bg-slate-300/50">
             <Baseline />
             <span className="text-lg font-bold ">Mindenkié</span>
           </Link>
@@ -25,6 +26,9 @@ export default async function MainNavBar() {
           <NavLinks />
         </div>
         <div className="flex items-center gap-3">
+          <Link href="https://www.instagram.com/mindenkie/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50">
+            <Instagram />
+          </Link>
           <ToggleMode />
           <SlideOver posts={data} />
         </div>

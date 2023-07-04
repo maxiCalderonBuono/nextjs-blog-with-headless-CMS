@@ -90,74 +90,112 @@ export const chevronLeft = () => (
 
 
 export const LinkIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.75"
-      className="icon icon-tabler icon-tabler-link"
-      viewBox="0 0 24 24"
-    >
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <path d="M9 15l6-6M11 6l.463-.536a5 5 0 017.071 7.072L18 13M13 18l-.397.534a5.068 5.068 0 01-7.127 0 4.972 4.972 0 010-7.071L6 11"></path>
-    </svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+    className="icon icon-tabler icon-tabler-link"
+    viewBox="0 0 24 24"
+  >
+    <path stroke="none" d="M0 0h24v24H0z"></path>
+    <path d="M9 15l6-6M11 6l.463-.536a5 5 0 017.071 7.072L18 13M13 18l-.397.534a5.068 5.068 0 01-7.127 0 4.972 4.972 0 010-7.071L6 11"></path>
+  </svg>
 )
 
-export const Whatsapp = ({className}: {className: string}) => (
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.75"
-      className={`icon icon-tabler icon-tabler-brand-whatsapp ${className}`}
-      viewBox="0 0 24 24"
-    >
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <path d="M3 21l1.65-3.8a9 9 0 113.4 2.9L3 21"></path>
-      <path d="M9 10a.5.5 0 001 0V9a.5.5 0 00-1 0v1a5 5 0 005 5h1a.5.5 0 000-1h-1a.5.5 0 000 1"></path>
-    </svg>
+export const Whatsapp = ({ className }: { className: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+    className={`icon icon-tabler icon-tabler-brand-whatsapp ${className}`}
+    viewBox="0 0 24 24"
+  >
+    <path stroke="none" d="M0 0h24v24H0z"></path>
+    <path d="M3 21l1.65-3.8a9 9 0 113.4 2.9L3 21"></path>
+    <path d="M9 10a.5.5 0 001 0V9a.5.5 0 00-1 0v1a5 5 0 005 5h1a.5.5 0 000-1h-1a.5.5 0 000 1"></path>
+  </svg>
 )
 
-export const Facebook = ({className}: {className: string}) => (
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.75"
-      className={`icon icon-tabler icon-tabler-brand-facebook ${className}`}
-      viewBox="0 0 24 24"
-    >
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7"></path>
-    </svg>
+export const Facebook = ({ className }: { className: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+    className={`icon icon-tabler icon-tabler-brand-facebook ${className}`}
+    viewBox="0 0 24 24"
+  >
+    <path stroke="none" d="M0 0h24v24H0z"></path>
+    <path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7"></path>
+  </svg>
 )
 
-export const Twitter = ({className}: {className: string}) => (
-      <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.75"
-      className={`icon icon-tabler icon-tabler-brand-twitter ${className}`}
-      viewBox="0 0 24 24"
-    >
-      <path stroke="none" d="M0 0h24v24H0z"></path>
-      <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 00.497-3.753c0-.249 1.51-2.772 1.818-4.013z"></path>
-    </svg>
+export const Twitter = ({ className }: { className: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+    className={`icon icon-tabler icon-tabler-brand-twitter ${className}`}
+    viewBox="0 0 24 24"
+  >
+    <path stroke="none" d="M0 0h24v24H0z"></path>
+    <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 00.497-3.753c0-.249 1.51-2.772 1.818-4.013z"></path>
+  </svg>
+)
+
+export const Instagram = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+    className={`icon icon-tabler icon-tabler-brand-instagram md:w-[26px] md:h-[26px] w-[24px] h-[24px]`}
+    viewBox="0 0 24 24"
+  >
+    <path stroke="none" d="M0 0h24v24H0z"></path>
+    <path d="M4 8a4 4 0 014-4h8a4 4 0 014 4v8a4 4 0 01-4 4H8a4 4 0 01-4-4z"></path>
+    <path d="M9 12a3 3 0 106 0 3 3 0 10-6 0M16.5 7.5v.01"></path>
+  </svg>
+)
+
+export const Views = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    width="22"
+    height="22"
+    stroke="currentColor"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth="1.75"
+    className={`icon icon-tabler icon-tabler-eye-check`}
+    viewBox="0 0 24 24"
+  >
+    <path stroke="none" d="M0 0h24v24H0z"></path>
+    <path d="M10 12a2 2 0 104 0 2 2 0 00-4 0"></path>
+    <path d="M11.143 17.961C7.922 17.666 5.207 15.68 3 12c2.4-4 5.4-6 9-6 3.6 0 6.6 2 9 6-.222.37-.449.722-.68 1.057M15 19l2 2 4-4"></path>
+  </svg>
 )
