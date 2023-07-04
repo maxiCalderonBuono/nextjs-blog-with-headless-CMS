@@ -26,8 +26,9 @@ export default async function MainNavBar() {
           <NavLinks />
         </div>
         <div className="flex items-center gap-3">
-          <Link href="https://www.instagram.com/mindenkie/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50">
+          <Link href="https://www.instagram.com/mindenkie/" target="_blank" title="se abre en una nueva ventana" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50" aria-label="Ir al perfil de Instagram de Mindenkié">
             <Instagram />
+            <span className="absolute w-[1px] h-[1px] -top-[10px] overflow-hidden">Ir al perfil de Instagram de Mindenkié</span>
           </Link>
           <ToggleMode />
           <SlideOver posts={data} />
