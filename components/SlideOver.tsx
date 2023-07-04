@@ -27,7 +27,7 @@ const SlideOver = ({ posts }: SliderProps) => {
 
   return (
     <div className="flex items-center md:hidden">
-      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true" className="p-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2" aria-label="Menú mobile">
+      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true" className="p-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50" aria-label="Menú mobile">
         <div className="relative flex items-center hover:scale-105 hover:opacity-90 active:scale-95 w-[26px] h-[26px]" >
           <ClosedMenu />
         </div>

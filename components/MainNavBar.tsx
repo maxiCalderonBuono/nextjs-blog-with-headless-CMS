@@ -3,7 +3,6 @@ import { Baseline } from "lucide-react";
 import Link from "next/link";
 import ToggleMode from "./ToggleMode";
 import SlideOver from "./SlideOver";
-import getAllPosts from "~/lib/getAllPosts";
 import NavLinks from "./NavlLinks";
 
 import { client } from "~/lib/contentful/client";
