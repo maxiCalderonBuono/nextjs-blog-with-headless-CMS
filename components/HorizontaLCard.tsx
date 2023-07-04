@@ -17,7 +17,7 @@ interface ArticleProps {
 }
 const HorizontalCard = ({ attributes }: ArticleProps) => {
 
-  const {content, date} = attributes
+  const { content, date } = attributes
 
   return (
     <Link href={`/blog/${content.slug}`} className="block rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2">
@@ -38,8 +38,8 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
 
           <div className="flex flex-col w-full lg:w-4/5">
             <div className="flex flex-col justify-between gap-3 mb-2">
-                 {content.filter && (
-                <span className="bg-indigo-100 h-fit md:hidden w-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 border border-indigo-400">
+              {content.filter && (
+                <span className="bg-indigo-100 h-fit md:hidden w-fit uppercase dark:text-white text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-[#305072] border border-indigo-400">
                   {content.filter}
                 </span>
               )}
@@ -48,26 +48,26 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
               </h3>
               <div className="flex items-center gap-3">
                 {content.filter && (
-                <span className="bg-indigo-100 hidden md:block h-fit w-fit uppercase dark:text-indigo-300 text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-gray-600 border border-indigo-400">
-                  {content.filter}
-                </span>
-              )}
+                  <span className="bg-indigo-100 hidden md:block h-fit w-fit uppercase dark:text-white text-indigo-600 text-xs font-medium  px-2.5 py-0.5 rounded dark:bg-[#305072] border border-indigo-400">
+                    {content.filter}
+                  </span>
+                )}
                 <CalendarDays />
-                    {formatDate(date.createdAt)}
-                    </div>
+                {formatDate(date.createdAt)}
+              </div>
             </div>
 
-            <p className= "py-1 truncate lg:block text-1xl">
+            <p className="py-1 truncate lg:block text-1xl">
               {content.description}
             </p>
           </div>
- 
-   
-            <span className="absolute text-sm font-bold text-indigo-300 transition-opacity delay-150 opacity-0 sm:flex top-3 right-3 group-hover:opacity-100">
-              <ArrowUpRight />
-            </span>
-       
-       
+
+
+          <span className="absolute text-sm font-bold text-indigo-300 transition-opacity delay-150 opacity-0 sm:flex top-3 right-3 group-hover:opacity-100">
+            <ArrowUpRight />
+          </span>
+
+
         </div>
       </div>
     </Link>

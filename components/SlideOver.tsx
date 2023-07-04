@@ -27,8 +27,8 @@ const SlideOver = ({ posts }: SliderProps) => {
 
   return (
     <div className="flex items-center md:hidden">
-      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true" className="p-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2">
-        <div className="relative flex items-center hover:scale-105 hover:opacity-90 active:scale-95 ">
+      <button type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="slider-over-menu" aria-haspopup="true" className="p-2 rounded-md focus:outline-indigo-500 focus:outline focus:outline-2" aria-label="Menú mobile">
+        <div className="relative flex items-center hover:scale-105 hover:opacity-90 active:scale-95" >
           <ClosedMenu />
         </div>
       </button>
@@ -75,7 +75,7 @@ const SlideOver = ({ posts }: SliderProps) => {
                           </Link>
                         </button>
                         <div className="flex items-center gap-2">
-                          <Link href="https://www.instagram.com/mindenkie/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50">
+                          <Link href="https://www.instagram.com/mindenkie/" className="flex items-center p-2 space-x-2 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 hover:bg-slate-300/50 dark:hover:bg-slate-800/50" aria-label="Ir al perfil de Instagram de Mindenkié">
                             <Instagram />
                           </Link>
                           <ToggleMode />

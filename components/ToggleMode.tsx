@@ -12,6 +12,7 @@ const ToggleMode = () => {
   return (
     <Switch
       checked={enabled}
+      aria-label="Cambiar entre modo claro y oscuro"
       onChange={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
       className="flex items-center justify-center p-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 hover:bg-slate-300/50 dark:hover:bg-slate-800/50"
       onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
