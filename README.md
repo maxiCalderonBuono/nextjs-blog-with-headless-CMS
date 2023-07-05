@@ -76,10 +76,16 @@ Start the server
 NEXT_PUBLIC_APP_URL = " .... "
 ```
 ```bash
-NEXT_PUBLIC_APP_URL= " .... "
+CONTENTFUL_ACCESS_TOKEN= " .... "
 ```
 ```bash
-NEXT_PUBLIC_APP_URL= " .... "
+NEXT_PUBLIC_CONTENFUL_SPACE_ID= " .... "
+```
+```bash
+NEXT_PUBLIC_SUPABASE_URL= " .... "
+```
+```bash
+SUPABASE_APIKEY= " .... "
 ```
 
 ## Authors
