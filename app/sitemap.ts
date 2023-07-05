@@ -22,5 +22,5 @@ export default async function sitemap() {
     })
   );
 
-  return [...routes];
+  return [...routes,...blogs];
 }
