@@ -1,7 +1,7 @@
 import { ImageResponse } from "@vercel/og";
 import { Baseline } from "lucide-react";
 import { ogImageSchema } from "~/lib/og";
-import { getYear } from "date-fns";
+
 
 export const runtime = "edge";
 
@@ -31,8 +31,8 @@ export async function GET(req: Request) {
 
     const fontSize = heading.length > 60 ? "70px" : "100px";
 
-    const currentDate = new Date();
-    const currentYear = getYear(currentDate);
+    const currentYear = new Date().getFullYear();
+ 
 
 
     return new ImageResponse(
