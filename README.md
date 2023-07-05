@@ -39,8 +39,9 @@ Soon...
 ## Next steps 
 
 - [ ] Internationalization.
-- [ ] Media sharing.
+- [x] Media sharing.
 - [ ] Reactions.
+- [x] View counter.
 
 
 ## Run Locally
