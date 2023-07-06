@@ -53,7 +53,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                   </span>
                 )}
                 <CalendarDays />
-                <DateLabel>{date.createdAt}</DateLabel>
+                {/* <DateLabel>{date.createdAt}</DateLabel> */}
               </div>
             </div>
 
