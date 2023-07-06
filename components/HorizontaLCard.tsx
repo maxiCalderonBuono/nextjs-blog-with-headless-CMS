@@ -29,6 +29,8 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                 <Image
                   src={content.image.fields.file.url}
                   fill
+                  sizes="100%"
+                  placeHolder="blur"
                   alt={content.title}
                   className="object-cover rounded-lg "
                 />
