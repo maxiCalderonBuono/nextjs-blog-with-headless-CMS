@@ -2,7 +2,7 @@
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "~/lib/formatedDate";
+// import { formatDate } from "~/lib/formatedDate";
 import profile from "../../../assets/images/profile.jpg";
 
 import type { Metadata } from "next";
@@ -152,7 +152,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
       {sys.createdAt && (
         <time dateTime={sys.createdAt} className="block text-sm opacity-60">
-          Publicado el {formatDate(sys.createdAt)}
+          {/* Publicado el {formatDate(sys.createdAt)} */}
         </time>
       )}
       <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">

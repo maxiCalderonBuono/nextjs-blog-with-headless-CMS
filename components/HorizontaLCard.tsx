@@ -3,8 +3,7 @@ import { Fields, ContentfulTypesSys } from "../types";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
-import Balancer from "react-wrap-balancer";
-import { formatDate } from "~/lib/formatedDate";
+// import { formatDate } from "~/lib/formatedDate";
 
 
 type PostData = {
@@ -54,7 +53,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                   </span>
                 )}
                 <CalendarDays />
-                {formatDate(date.createdAt)}
+                {/* {formatDate(date.createdAt)} */}
               </div>
             </div>
 
