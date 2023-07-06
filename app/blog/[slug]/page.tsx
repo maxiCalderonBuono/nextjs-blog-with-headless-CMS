@@ -15,6 +15,7 @@ import { notFound } from "next/navigation";
 import ViewCounter from "./view-counter";
 import getViewsCount from "~/lib/getViewsCount";
 import ContentfulImage from "~/components/ContentfulImage";
+import DateLabel from "~/components/UI/DateLabel";
 
 
 
@@ -152,7 +153,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
       {sys.createdAt && (
         <time dateTime={sys.createdAt} className="block text-sm opacity-60">
-          {/* Publicado el {formatDate(sys.createdAt)} */}
+          Publicado el <DateLabel>{sys.createdAt}</DateLabel>
         </time>
       )}
       <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">

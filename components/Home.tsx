@@ -6,7 +6,7 @@ import Tabs from "~/components/Tabs";
 import PostList from "./PostList";
 import Grid from "./Grid";
 import { useFilterContext } from "./filter";
-import { ChevronRight, Link } from "lucide-react";
+
 
 
 interface HompeProps {
@@ -27,7 +27,7 @@ const Home = ({ data }: HompeProps) => {
       }
     }
 
-    // const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
+    //const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
 
     return matches;
   }, [filters, data]);
