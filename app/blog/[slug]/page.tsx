@@ -2,7 +2,6 @@
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-// import { formatDate } from "~/lib/formatedDate";
 import profile from "../../../assets/images/profile.jpg";
 
 import type { Metadata } from "next";
