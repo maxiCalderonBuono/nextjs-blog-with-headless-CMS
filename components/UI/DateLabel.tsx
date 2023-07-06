@@ -1,21 +1,24 @@
 "use client"
 
+
 function DateLabel({ ...props }) {
+  if (!props.children) return null;
 
-  if (!props.children) return null
-
-  const dateString = new Date(props.children).toLocaleDateString("es-ES", {
+  let options: Intl.DateTimeFormatOptions = {
     month: "long",
     day: "numeric",
     year: "numeric",
-  });
+  };
 
+  if (props.year) {
+    options = {
+      year: "numeric",
+    };
+  }
 
-  return (
+  const dateString = new Date(props.children).toLocaleDateString("es-ES", options);
 
-    <>{dateString}</>
-
-  )
+  return <>{dateString}</>;
 }
 
-export default DateLabel
+export default DateLabel;
