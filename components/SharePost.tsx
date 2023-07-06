@@ -20,7 +20,7 @@ const SharePost = ({ url, title }: { url: string, title: string }) => {
         <div className="flex-grow h-[2px] bg-gray-400"></div>
         <div className='flex justify-between gap-3 text-xl'>
           <div>
-            <Toaster />
+            <Toaster richColors />
             <button className="hover:text-indigo-500 hover:scale-[120%] active:scale-95 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 p-2" onClick={() => CopyToClipboard()}><LinkIcon /></button>
           </div>
           <WhatsappShareButton url={url} title={title} className=" hover:scale-[120%] active:scale-95 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2" >
@@ -37,7 +37,7 @@ const SharePost = ({ url, title }: { url: string, title: string }) => {
         <div className="flex-grow h-[2px] bg-gray-400"></div>
 
       </article>
-      <ToastContainer />
+
     </>
   )
 }

@@ -3,7 +3,6 @@ import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "~/lib/formatedDate";
-
 import profile from "../../../assets/images/profile.jpg";
 
 import type { Metadata } from "next";
@@ -13,9 +12,9 @@ import { INLINES, Node, BLOCKS } from "@contentful/rich-text-types";
 import React from "react";
 import SharePost from "~/components/SharePost";
 import { notFound } from "next/navigation";
-import { Views } from "~/utils/Icons";
 import ViewCounter from "./view-counter";
 import getViewsCount from "~/lib/getViewsCount";
+import ContentfulImage from "~/components/ContentfulImage";
 
 
 
@@ -109,6 +108,7 @@ const options = {
           src={`https:${node.data.target.fields.file.url}`}
           height={node.data.target.fields.file.details.image.height}
           width={node.data.target.fields.file.details.image.width}
+          sizes="100vw"
         />
       );
     },
@@ -175,7 +175,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
       </div>
       {fields.image && (
-        <Image
+        <ContentfulImage
           src={fields.image.fields.file.url}
           width={720}
           height={405}
