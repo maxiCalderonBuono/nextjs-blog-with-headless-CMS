@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Fields } from "~/types";
-import { TimeAgo } from "./TimeAgo";
 import Link from "next/link";
 
 interface ArticleProps {
