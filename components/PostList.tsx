@@ -25,7 +25,7 @@ const PostList = ({ posts, navigation }: PostListProps) => {
       >
         <Link
           href="/blog"
-          className="flex justify-center items-center w-fit px-4 py-2 rounded-md hover:bg-slate-300/50 dark:hover:bg-slate-800/50 font-bold ¿ text-indigo-400 text-lg hover:scale-[102%] focus:outline-indigo-500 focus:outline focus:outline-2"
+          className="flex justify-center items-center w-fit px-4 py-2 rounded-md hover:bg-slate-300/50 dark:hover:bg-slate-800/50 font-bold ¿ text-[#434982] text-lg hover:scale-[102%] focus:outline-indigo-500 focus:outline focus:outline-2"
         >
           Todos los posts <ArrowRight />
         </Link>
