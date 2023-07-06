@@ -56,15 +56,15 @@ export const metadata: Metadata = {
 
     locale: "en-ES",
   },
-  // robots: {
-  //   index: true,
-  //   googleBot: {
-  //     index: true,
-  //     "max-video-preview": -1,
-  //     "max-image-preview": "large",
-  //     "max-snippet": -1,
-  //   },
-  // },
+  robots: {
+    index: true,
+    googleBot: {
+      index: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   twitter: {
     title: "Mindenkié",
     card: "summary_large_image",
