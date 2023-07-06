@@ -27,9 +27,9 @@ const Home = ({ data }: HompeProps) => {
       }
     }
 
-    const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
+    // const sortedPosts = [...matches].sort((a, b) => Number(new Date(b.sys.createdAt)) - Number(new Date(a.sys.createdAt)));
 
-    return sortedPosts;
+    return matches;
   }, [filters, data]);
 
   return (
