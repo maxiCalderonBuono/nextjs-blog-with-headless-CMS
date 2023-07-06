@@ -3,7 +3,7 @@ import { Items } from "~/types";
 import HorizontalCard from "./HorizontaLCard";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Card } from "./Card";
+
 
 interface PostListProps {
   posts: Items[];
