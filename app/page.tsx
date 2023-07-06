@@ -1,4 +1,4 @@
-import getAllPosts from "~/lib/getAllPosts";
+
 import Home from "~/components/Home";
 import { client } from "~/lib/contentful/client";
 
