@@ -1,12 +1,11 @@
 import React from "react";
 import { Copyright } from "~/utils/Icons";
-import { getYear } from "date-fns";
 import ToggleMode from "./ToggleMode";
 import { Baseline } from "lucide-react";
 
 const SiteFooter = () => {
-  const currentDate = new Date();
-  const currentYear = getYear(currentDate);
+
+  const currentYear = new Date().getFullYear()
   return (
     <footer className="flex flex-col items-center justify-between w-full max-w-6xl gap-3 px-6 py-10 mx-auto md:flex-row md:justify-between">
       <div className="flex flex-col items-center gap-2 md:flex-row">

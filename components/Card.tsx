@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Fields } from "~/types";
-import { TimeAgo } from "./TimeAgo";
 import Link from "next/link";
 
 interface ArticleProps {
@@ -23,6 +22,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
                   src={attributes.image.fields.file.url}
                   alt={attributes.title}
                   fill
+                  sizes="100%"
                   priority
                   className="object-cover rounded-md shadow-lg"
                 />
