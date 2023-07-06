@@ -9,3 +9,5 @@ export default function robots() {
     host: 'https://www.mindenkie.com/',
   };
 }
+
+
