@@ -3,6 +3,7 @@ import { Fields, ContentfulTypesSys } from "../types";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
+import DateLabel from "./UI/DateLabel";
 
 
 
@@ -53,7 +54,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                   </span>
                 )}
                 <CalendarDays />
-                {/* <DateLabel>{date.createdAt}</DateLabel> */}
+                <DateLabel>{date.createdAt}</DateLabel>
               </div>
             </div>
 

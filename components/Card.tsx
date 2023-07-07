@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Fields } from "~/types";
 import Link from "next/link";
-import ContentfulImage from "./UI/ContentfulImage";
+
 
 interface ArticleProps {
   attributes: Fields;
