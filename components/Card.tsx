@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Fields } from "~/types";
 import Link from "next/link";
+import ContentfulImage from "./UI/ContentfulImage";
 
 interface ArticleProps {
   attributes: Fields;
@@ -19,7 +20,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
             <div className="absolute inset-0">
               {attributes.image && (
                 <Image
-                  src={attributes.image.fields.file.url}
+                  src={`http:${attributes.image.fields.file.url}`}
                   alt={attributes.title}
                   fill
                   priority

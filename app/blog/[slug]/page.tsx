@@ -13,7 +13,6 @@ import SharePost from "~/components/SharePost";
 import { notFound } from "next/navigation";
 import ViewCounter from "./view-counter";
 import getViewsCount from "~/lib/getViewsCount";
-import ContentfulImage from "~/components/ContentfulImage";
 import DateLabel from "~/components/UI/DateLabel";
 
 
@@ -175,8 +174,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
       </div>
       {fields.image && (
-        <ContentfulImage
-          src={fields.image.fields.file.url}
+        <Image
+          src={`http:${fields.image.fields.file.url}`}
           width={720}
           height={405}
           alt={fields.title}

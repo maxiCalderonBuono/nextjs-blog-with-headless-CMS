@@ -26,7 +26,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
             {content.image && (
               <div className="relative w-[95%] h-24 grow">
                 <Image
-                  src={content.image.fields.file.url}
+                  src={`http:${content.image.fields.file.url}`}
                   fill
                   sizes="100%"
                   alt={content.title}
