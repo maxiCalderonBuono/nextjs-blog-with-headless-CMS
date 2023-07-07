@@ -17,7 +17,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
       >
         <div className="group  [perspective:1000px]">
           <div className="relative aspect-video h-full w-full rounded-xl  transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 w-full h-full">
               {attributes.image && (
                 <Image
                   src={`http:${attributes.image.fields.file.url}`}
