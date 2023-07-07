@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Fields } from "~/types";
 import Link from "next/link";
-import { contentfulLoader } from "~/lib/contentful/contentfulLoader";
+
 
 
 interface ArticleProps {
@@ -21,7 +21,6 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
             <div className="absolute inset-0 w-full h-full">
               {attributes.image && (
                 <Image
-                  loader={contentfulLoader}
                   src={attributes.image.fields.file.url}
                   alt={attributes.title}
                   fill
