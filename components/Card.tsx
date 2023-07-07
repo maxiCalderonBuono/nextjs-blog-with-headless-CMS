@@ -21,7 +21,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
             <div className="absolute inset-0 w-full h-full">
               {attributes.image && (
                 <Image
-                  src={attributes.image.fields.file.url}
+                  src={`https:${attributes.image.fields.file.url}`}
                   alt={attributes.title}
                   fill
                   priority
