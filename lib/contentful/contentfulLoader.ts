@@ -3,7 +3,7 @@ import { ImageLoader } from "next/image"
 
 export const contentfulLoader:ImageLoader = ({src,width,quality}) => {
 
-  const url= new URL(`http:${src}`)
+  const url= new URL(`https:${src}`)
 
   const params = url.searchParams;
 
