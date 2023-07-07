@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   description:
     "Un blog para invitar a debatir y repensar la politica, economía y sociedad.",
   keywords: [
+    "blog",
+    "opinion",
     "Economía",
     "Mundo",
     "Política argentina",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     title: "Mindenkié",
     description:
       "Un blog para invitar a debatir y repensar la politica, economía y sociedad.",
-    url: "https://mindenkietest.vercel.app/",
+    url: "https://www.mindenkie.com/",
     siteName: "Mindenkié",
     images: [
       {

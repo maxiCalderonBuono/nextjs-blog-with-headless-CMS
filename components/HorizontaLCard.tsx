@@ -3,7 +3,7 @@ import { Fields, ContentfulTypesSys } from "../types";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
-import DateLabel from "./UI/DateLabel";
+
 
 
 type PostData = {

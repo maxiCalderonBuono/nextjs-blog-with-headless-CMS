@@ -1,7 +1,19 @@
 "use client"
 
+import useHasMounted from "~/lib/useHasMounted";
+
+
 
 function DateLabel({ ...props }) {
+
+  const hasMounted = useHasMounted();
+
+
+  if (!hasMounted) {
+    return null;
+  }
+
+
   if (!props.children) return null;
 
   let options: Intl.DateTimeFormatOptions = {
