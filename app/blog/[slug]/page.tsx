@@ -159,13 +159,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
       </h1>
       <div className="flex items-center gap-3">
         <div className="flex items-center my-3 space-x-2 text-md">
-          <Image
-            src={profile}
-            alt="El escritor de Mindenkié"
-            width={96}
-            height={114}
-            className="bg-indigo-300 rounded-full h-11 w-11"
-          />
+          <div className="relative overflow-hidden rounded-full h-11 w-11">
+            <Image
+              src={profile}
+              alt="El escritor de Mindenkié"
+              fill
+              sizes="100%"
+              className="bg-indigo-300"
+            />
+          </div>
           <div className="flex-1 leading-tight text-left">
             <p className="font-bold">Sultano</p>
           </div>
