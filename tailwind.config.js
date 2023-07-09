@@ -15,6 +15,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        pattern: 'radial-gradient(#444cf7 2px, #e5e5f7 2px) 0%, #272A37 40.0%) bg-[length:40px_40px]',
+      },
       colors: {
         whatsapp: "#28D146",
         twitter: "#1DA1F2",

@@ -137,7 +137,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
 
 
-    <article className="relative max-w-3xl px-6 py-10 mx-auto">
+    <article className="relative max-w-3xl px-6 py-10 mx-auto bg-pattern">
 
 
       <Link
@@ -162,8 +162,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <Image
             src={profile}
             alt="El escritor de Mindenkié"
-            width={44}
-            height={44}
+            width={96}
+            height={114}
             className="bg-indigo-300 rounded-full h-11 w-11"
           />
           <div className="flex-1 leading-tight text-left">

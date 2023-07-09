@@ -21,7 +21,7 @@ const SharePost = ({ url, title }: { url: string, title: string }) => {
         <div className='flex justify-between gap-3 text-xl'>
           <div>
             <Toaster richColors />
-            <button className="hover:text-indigo-500 hover:scale-[120%] active:scale-95 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 p-2" onClick={() => CopyToClipboard()}><LinkIcon /></button>
+            <button className="hover:text-indigo-500 hover:scale-[120%] active:scale-95 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2 p-2" onClick={() => CopyToClipboard()} aria-label="Capiar enlace del post"><LinkIcon /></button>
           </div>
           <WhatsappShareButton url={url} title={title} className=" hover:scale-[120%] active:scale-95 rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2" >
             <Whatsapp className='m-2 hover:text-whatsapp' />

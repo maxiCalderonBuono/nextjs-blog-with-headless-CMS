@@ -3,7 +3,6 @@ import { Fields } from "~/types";
 import Link from "next/link";
 
 
-
 interface ArticleProps {
   attributes: Fields;
   textSize: string

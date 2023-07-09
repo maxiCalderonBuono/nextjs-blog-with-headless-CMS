@@ -7,6 +7,8 @@ type Slug = { slug?: string}
 
 export async function POST(req: NextRequest) {
 
+  console.log(req.ip)
+
   const {slug}:Slug = await req.json()
 
   await supabase.rpc("update_views", { page_slug: slug});
