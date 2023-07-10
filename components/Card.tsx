@@ -25,7 +25,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
                   src={`https:${attributes.image.fields.file.url}`}
                   alt={attributes.title}
                   fill
-                  sizes="(min-width: 767px) 33vw, (min-width: 568px) 50vw, 100vw"
+                  sizes="(max-width: 568px) 100vw, (max-width: 767px) 50vw, 33vw"
                   priority
                   className="object-cover rounded-md shadow-lg"
                 />
