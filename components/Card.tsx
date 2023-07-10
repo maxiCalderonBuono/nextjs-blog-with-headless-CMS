@@ -9,6 +9,8 @@ interface ArticleProps {
 }
 
 export const Card = ({ attributes, textSize }: ArticleProps) => {
+
+  console.log(attributes.image.fields.file.url)
   return (
     <article>
       <Link
@@ -17,14 +19,14 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
       >
         <div className="group  [perspective:1000px]">
           <div className="relative aspect-video h-full w-full rounded-xl  transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-            <div className="absolute inset-0 w-full h-full">
+            <div className="absolute inset-0">
               {attributes.image && (
                 <Image
                   src={`https:${attributes.image.fields.file.url}`}
                   alt={attributes.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
-                  sizes="100%"
                   className="object-cover rounded-md shadow-lg"
                 />
               )}
