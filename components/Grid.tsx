@@ -16,7 +16,7 @@ const Grid = ({ posts }: PostListProps) => {
   return (
     <section className="my-8">
       <h1 className="py-5 mb-5 text-5xl font-extrabold text-center lg:text-6xl md:text-left">DESTACADOS</h1>
-      <div className={`grid gap-10 grid-cols-1 ${posts.length > 1 ? "md:grid-cols-2" : "md:grid-cols-1"}`}>
+      <div className={`grid gap-10 grid-cols-1 mb-10 ${posts.length > 1 ? "md:grid-cols-2" : "md:grid-cols-1"}`}>
         {posts.map((post, index) => (
           <Card key={post.sys.id} attributes={post.fields} textSize={textSize} />
         ))}
