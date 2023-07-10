@@ -14,7 +14,7 @@ import { notFound } from "next/navigation";
 import ViewCounter from "./view-counter";
 import getViewsCount from "~/lib/getViewsCount";
 import DateLabel from "~/components/UI/DateLabel";
-import { LikeButton } from "~/components/LikeButton";
+
 
 
 
