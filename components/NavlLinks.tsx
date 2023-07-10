@@ -11,7 +11,7 @@ const NavLinks = () => {
   );
 
   return (
-    <ul className="flex gap-3">
+    <nav className="flex gap-3">
       {filteredNavLinks.map((navlink) => (
         <Link
           key={navlink.name}
@@ -21,7 +21,7 @@ const NavLinks = () => {
           {navlink.name}
         </Link>
       ))}
-    </ul>
+    </nav>
   );
 };
 
