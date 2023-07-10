@@ -10,7 +10,7 @@ interface ArticleProps {
 
 export const Card = ({ attributes, textSize }: ArticleProps) => {
 
-  console.log(attributes.image.fields.file.url)
+
   return (
     <article>
       <Link
@@ -25,7 +25,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
                   src={`https:${attributes.image.fields.file.url}`}
                   alt={attributes.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 767px) 100vw, 50vw"
                   priority
                   className="object-cover rounded-md shadow-lg"
                 />
