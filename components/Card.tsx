@@ -26,7 +26,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
                   alt={attributes.title}
                   fill
                   priority
-                  sizes="(min-width: 640px) 50vw, 100vw"
+                  sizes="(min-width: 640px) 33vw, 100vw"
                   className="object-cover rounded-md shadow-lg"
                 />
               )}
