@@ -30,7 +30,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                   src={`http:${content.image.fields.file.url}`}
                   fill
                   quality={30}
-                  sizes="384px"
+                  sizes="170px"
                   alt={content.title}
                   className="object-cover rounded-lg "
                 />
