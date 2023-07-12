@@ -150,9 +150,14 @@ module.exports = {
             hr: {
               margin: "1rem 0",
             },
+            figCaption: {
+               color: theme("colors.indigo.400"),
+               textAlign: "center",
+            },
             img: {
               borderRadius: "0.375rem",
               border: "1px solid",
+              marginBottom: "0 !important"
             },
             table: {
               width: "100%",

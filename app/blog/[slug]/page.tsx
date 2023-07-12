@@ -103,13 +103,17 @@ const options = {
     },
     [BLOCKS.EMBEDDED_ASSET]: (node: Node, children: React.ReactNode) => {
       return (
-        <Image
-          alt={node.data.target.fields.file.details.title}
-          src={`https:${node.data.target.fields.file.url}`}
-          height={node.data.target.fields.file.details.image.height}
-          width={node.data.target.fields.file.details.image.width}
-          sizes="100vw"
-        />
+        <div>
+          <Image
+            alt={node.data.target.fields.file.details.title}
+            src={`https:${node.data.target.fields.file.url}`}
+            height={node.data.target.fields.file.details.image.height}
+            width={node.data.target.fields.file.details.image.width}
+            sizes="50vw"
+            className="mx-auto mb-0"
+          />
+          <figcaption>{node.data.target.fields.description}</figcaption>
+        </div>
       );
     },
   },
@@ -118,6 +122,8 @@ const options = {
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const url = process.env.NEXT_PUBLIC_APP_URL;
+
+
 
   const { total } = await getViewsCount(slug)
 
@@ -134,6 +140,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
 
   const { fields, sys } = items[0];
+
+
 
   return (
 
@@ -188,11 +196,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
         />
       )}
 
-      <p className="p-4 my-6 border border-l-4 border-gray-400 rounded-md ">
+      <p className="p-4 my-6 font-semibold border border-l-4 border-gray-400 rounded-md">
         {fields.description}
       </p>
       <SharePost url={`${url}/blog/${slug}`} title={fields.title} />
-      <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2">
+      <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2 prose-figcaption:text-sm prose-img:aspect-video prose-img:object-contain">
         {documentToReactComponents(fields.content, options)}
       </section>
       <SharePost url={`${url}/blog/${slug}`} title={fields.title} />

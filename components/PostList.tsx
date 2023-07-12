@@ -16,7 +16,7 @@ const PostList = ({ posts, navigation }: PostListProps) => {
     <section className="py-4">
       {posts.map((post) => (
         <div key={post.sys.id} >
-          <HorizontalCard attributes={{ content: post.fields, date: post.sys }} priority />
+          <HorizontalCard attributes={{ content: post.fields, date: post.sys }} />
 
           <hr className="mt-2 md:hidden" />
         </div>
