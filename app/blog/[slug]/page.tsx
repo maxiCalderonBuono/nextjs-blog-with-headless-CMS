@@ -2,7 +2,7 @@
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import profile from "../../../assets/images/profile.jpg";
+import profile from "../../../assets/images/profile.webp";
 
 import type { Metadata } from "next";
 import { client } from "~/lib/contentful/client";
@@ -164,8 +164,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
             <Image
               src={profile}
               alt="El escritor de Mindenkié"
-              fill
-              sizes="100%"
+              quality={75}
+              width={44}
+              height={44}
+              priority
               className="bg-indigo-300"
             />
           </div>
