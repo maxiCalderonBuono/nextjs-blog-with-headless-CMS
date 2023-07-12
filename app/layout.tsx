@@ -43,11 +43,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: "maxiCalderónBuono",
-  // icons: {
-  //   icon: '/favicon.ico',
-  //   shortcut: '/favicon.ico',
-  //   other: [{ rel: 'apple-touch-icon', url: '/apple-touch-icon.png', sizes: "180x180" }, { rel: "icon", url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" }],
-  // },
   openGraph: {
     title: "Mindenkié",
     description:

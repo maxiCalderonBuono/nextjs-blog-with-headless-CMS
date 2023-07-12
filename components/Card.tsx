@@ -6,9 +6,10 @@ import Link from "next/link";
 interface ArticleProps {
   attributes: Fields;
   textSize: string
+  priority: boolean
 }
 
-export const Card = ({ attributes, textSize }: ArticleProps) => {
+export const Card = ({ attributes, textSize, priority }: ArticleProps) => {
 
   return (
     <article>
@@ -24,7 +25,7 @@ export const Card = ({ attributes, textSize }: ArticleProps) => {
                   src={`https:${attributes.image.fields.file.url}`}
                   alt={attributes.title}
                   fill
-                  priority
+                  priority={priority}
                   sizes="(max-width:640px) 340px, (max-width:767px) 640px, 33vw"
                   className="object-cover rounded-md shadow-lg"
                 />
