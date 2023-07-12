@@ -25,14 +25,14 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
         <div className="flex flex-col w-full gap-3 px-2 py-5 overflow-hidden group hero-content sm:flex-row sm:justify-between">
           <div className="hidden w-1/5 lg:block">
             {content.image && (
-              <div className="relative w-[95%] h-24">
+              <div className="relative h-24 w-171">
                 <Image
                   src={`http:${content.image.fields.file.url}`}
                   quality={30}
-                  width={171}
-                  height={96}
+                  fill
+                  sizes="171px"
                   alt={content.title}
-                  className="object-cover h-24 rounded-lg w-171"
+                  className="object-cover rounded-lg"
                 />
               </div>
             )}
