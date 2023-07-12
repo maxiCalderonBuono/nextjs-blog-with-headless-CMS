@@ -29,7 +29,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
                 <Image
                   src={`http:${content.image.fields.file.url}`}
                   fill
-                  quality={30}
+                  quality={10}
                   sizes="170px"
                   alt={content.title}
                   className="object-cover rounded-lg "

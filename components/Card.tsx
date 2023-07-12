@@ -10,7 +10,6 @@ interface ArticleProps {
 
 export const Card = ({ attributes, textSize }: ArticleProps) => {
 
-  console.log(attributes.image.fields.file.url)
   return (
     <article>
       <Link

@@ -68,7 +68,7 @@ export async function generateMetadata({
   return {
     title: fields.title,
     description: fields.description,
-
+    alternates: { canonical: `https://mindenkietest.vercel.app/blog/${slug}` },
     openGraph: {
       title: fields.title,
       description: fields.description,
