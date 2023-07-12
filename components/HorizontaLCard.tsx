@@ -28,9 +28,9 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
               <div className="relative w-[95%] h-24 grow">
                 <Image
                   src={`http:${content.image.fields.file.url}`}
-                  fill
-                  quality={10}
-                  sizes="170px"
+                  quality={30}
+                  width={171}
+                  height={96}
                   alt={content.title}
                   className="object-cover rounded-lg "
                 />
