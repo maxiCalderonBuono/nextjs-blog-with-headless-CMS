@@ -41,7 +41,7 @@ export async function GET(req: Request) {
           tw="flex h-full w-full  "
           style={{
             color: "#000",
-            backgroundImage: `url(https:${postImage})`,
+            backgroundImage: `url(https:${postImage}?fm=png)`,
             backgroundSize: "cover",
             backgroundPosition: "right"
           }}
