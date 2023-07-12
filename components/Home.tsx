@@ -9,11 +9,15 @@ import { useFilterContext } from "./filter";
 
 
 
+
+
 interface HompeProps {
   data: Items[];
 }
 
 const Home = ({ data }: HompeProps) => {
+
+
   const { filters } = useFilterContext();
 
   const matches = useMemo(() => {

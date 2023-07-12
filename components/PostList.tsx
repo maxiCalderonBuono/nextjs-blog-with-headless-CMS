@@ -8,6 +8,7 @@ import Link from "next/link";
 interface PostListProps {
   posts: Items[];
   navigation?: boolean;
+
 }
 
 const PostList = ({ posts, navigation }: PostListProps) => {
@@ -15,7 +16,7 @@ const PostList = ({ posts, navigation }: PostListProps) => {
     <section className="py-4">
       {posts.map((post) => (
         <div key={post.sys.id} >
-          <HorizontalCard attributes={{ content: post.fields, date: post.sys }} />
+          <HorizontalCard attributes={{ content: post.fields, date: post.sys }} priority />
 
           <hr className="mt-2 md:hidden" />
         </div>

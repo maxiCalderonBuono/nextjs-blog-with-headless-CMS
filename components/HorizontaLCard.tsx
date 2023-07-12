@@ -7,6 +7,7 @@ import DateLabel from "./UI/DateLabel";
 
 
 
+
 type PostData = {
   content: Fields,
   date: ContentfulTypesSys
@@ -14,8 +15,11 @@ type PostData = {
 
 interface ArticleProps {
   attributes: PostData
+
 }
 const HorizontalCard = ({ attributes }: ArticleProps) => {
+
+
 
   const { content, date } = attributes
 
@@ -27,7 +31,7 @@ const HorizontalCard = ({ attributes }: ArticleProps) => {
             {content.image && (
               <div className="relative h-24 w-44">
                 <Image
-                  src={`http:${content.image.fields.file.url}`}
+                  src={`http:${content.image.fields.file.url}?w=256`}
                   quality={30}
                   fill
                   sizes="171px"
