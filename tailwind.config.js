@@ -99,6 +99,7 @@ module.exports = {
               display: "inline",
             },
             p: {
+              fontSize: "1.2rem",
               lineHeight: "1.75rem",
               "&:not(firstChild)": {
                 marginTop: "1.5rem",
@@ -189,6 +190,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         heading: ["var(--font-heading)", ...fontFamily.sans],
+        typo:["var(--font-jost)", ...fontFamily.sans],
       },
       animation: {
         toggle: "toggle 3s ease-in-out",

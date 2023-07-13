@@ -8,8 +8,14 @@ import { FiltersProvider } from "~/components/filter";
 
 
 const inter = localFont({
-  src: "../assets/fonts/Inter-Regular.ttf",
+  src: "../assets/fonts/Inter-Regular.woff2",
   variable: "--font-inter",
+  display: "swap",
+});
+
+const jost = localFont({
+  src: "../assets/fonts/Jost-Light.woff2",
+  variable: "--font-jost",
   display: "swap",
 });
 
@@ -43,7 +49,9 @@ export const metadata: Metadata = {
     },
   ],
   creator: "maxiCalderónBuono",
-
+  icons: {
+    shortcut: '../favicon.ico',
+  },
   openGraph: {
     title: "Mindenkié",
     description:
@@ -85,7 +93,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${fontHeading.variable}`}>
+    <html lang="es" className={`${inter.variable} ${jost.variable} ${fontHeading.variable}`}>
       <body className="flex flex-col min-h-screen dark:bg-gray-900">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FiltersProvider>

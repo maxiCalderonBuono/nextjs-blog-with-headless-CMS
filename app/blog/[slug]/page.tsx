@@ -103,14 +103,14 @@ const options = {
     },
     [BLOCKS.EMBEDDED_ASSET]: (node: Node, children: React.ReactNode) => {
       return (
+
         <div>
           <Image
             alt={node.data.target.fields.file.details.title}
             src={`https:${node.data.target.fields.file.url}`}
             height={node.data.target.fields.file.details.image.height}
             width={node.data.target.fields.file.details.image.width}
-            sizes="50vw"
-            className="mx-auto mb-0"
+            className="max-w-3xl mx-auto mb-0 w-full sm:w-[80%]"
           />
           <figcaption>{node.data.target.fields.description}</figcaption>
         </div>
@@ -146,12 +146,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
 
 
-    <article className="relative max-w-3xl px-6 py-10 mx-auto bg-pattern">
+    <article className="relative w-full max-w-3xl px-6 py-10 mx-auto bg-pattern">
 
 
       <Link
         href="/blog"
-        className="absolute left-[-200px] top-14 hidden xl:inline-flex dark:hover:bg-gray-800 hover:bg-gray-200 px-4 py-2  rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
+        className="absolute  left-[-200px] top-14 hidden xl:inline-flex dark:hover:bg-gray-800 hover:bg-gray-200 px-4 py-2  rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
       >
         <ChevronLeft className="flex items-center" />
         Todos los posts
@@ -163,11 +163,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
           Publicado el <DateLabel>{sys.createdAt}</DateLabel>
         </time>
       )}
-      <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">
+      <h1 className="inline-block mt-2 text-4xl leading-tight lg:text-5xl">
         {fields.title}
       </h1>
-      <div className="flex items-center gap-3">
-        <div className="flex items-center my-3 space-x-2 text-md">
+      <div className="flex items-center gap-3 mt-3 mb-5">
+        <div className="flex items-center space-x-2 text-md">
           <div className="relative overflow-hidden rounded-full h-11 w-11">
             <Image
               src={profile}
@@ -187,20 +187,22 @@ export default async function Post({ params }: { params: { slug: string } }) {
         {/* <LikeButton slug={slug} /> */}
       </div>
       {fields.image && (
-        <Image
-          src={`http:${fields.image.fields.file.url}`}
-          width={720}
-          height={405}
-          alt={fields.title}
-          className="rounded-lg "
-        />
+        <div className="relative aspect-video">
+          <Image
+            src={`http:${fields.image.fields.file.url}`}
+            alt={fields.title}
+            fill
+            priority
+            sizes="(max-width:640px) 340px, (max-width:767px) 640px, 33vw"
+            className="object-cover rounded-lg"
+          /></div>
       )}
 
       <p className="p-4 my-6 font-semibold border border-l-4 border-gray-400 rounded-md">
         {fields.description}
       </p>
       <SharePost url={`${url}/blog/${slug}`} title={fields.title} />
-      <section className="my-3 prose text-gray-900 dark:text-gray-100 md:prose-lg dark:prose-headings:text-white  lg:prose-xl prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2 prose-figcaption:text-sm prose-img:aspect-video prose-img:object-contain">
+      <section className="w-full font-typo my-3 prose max-w-full text-gray-900 dark:text-gray-100  dark:prose-headings:text-white   prose-a:after:content-['_↗'] prose-p:text-md dark:prose-p:text-gray-300 prose-a:after:ml-2 prose-figcaption:text-sm">
         {documentToReactComponents(fields.content, options)}
       </section>
       <SharePost url={`${url}/blog/${slug}`} title={fields.title} />

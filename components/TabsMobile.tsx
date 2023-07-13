@@ -32,7 +32,7 @@ const TabsMobile: React.FC<Props> = ({ posts, onChange }) => {
     setFilters({ category: filter });
   };
 
-  function handleOnChange(index: number) {}
+  function handleOnChange(index: number) { }
 
   return (
     <div className="flex flex-col items-start gap-3 mx-8 my-8 shadow-xl sm:px-0">
@@ -41,9 +41,8 @@ const TabsMobile: React.FC<Props> = ({ posts, onChange }) => {
         <button
           type="button"
           key={tab}
-          className={`text-2xl font-bold px-4 py-2 ${
-            selectedCategory === tab ? "bg-gray-700 rounded-lg" : ""
-          }`}
+          className={`text-2xl font-bold px-4 py-2 ${selectedCategory === tab ? "bg-gray-700 rounded-lg" : ""
+            }`}
           onClick={() => handleCategoryChange(tab)}
         >
           {tab}
