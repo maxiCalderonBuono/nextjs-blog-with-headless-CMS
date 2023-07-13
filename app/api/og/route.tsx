@@ -6,11 +6,11 @@ import { ogImageSchema } from "~/lib/og";
 export const runtime = "edge";
 
 const interRegular = fetch(
-  new URL("../../../assets/fonts/Inter-Regular.ttf", import.meta.url)
+  new URL("../../../assets/fonts/Inter-Regular.woff2", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 const interBold = fetch(
-  new URL("../../../assets/fonts/CalSans-SemiBold.ttf", import.meta.url)
+  new URL("../../../assets/fonts/CalSans-SemiBold.woff2", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export async function GET(req: Request) {
@@ -32,7 +32,7 @@ export async function GET(req: Request) {
     const fontSize = heading.length > 60 ? "70px" : "100px";
 
     const currentYear = new Date().getFullYear();
- 
+
 
 
     return new ImageResponse(
@@ -46,64 +46,64 @@ export async function GET(req: Request) {
             backgroundPosition: "right"
           }}
         >
-          <div tw="flex flex-col items-start w-full h-full py-12 px-16"    style={{
+          <div tw="flex flex-col items-start w-full h-full py-12 px-16" style={{
             color: "#000",
             backgroundImage: "linear-gradient(to right, rgba(31,32,40,1) 40%, rgba(31,32,40,0.9) 60%, rgba(31,32,40,0.8) 70%, rgba(31,32,40,0.7) 80%, rgba(31,32,40,0.6))",
           }}>
-          <div tw="flex items-center w-full">
-            <p
-              tw="text-3xl font-extrabold uppercase text-white"
-              style={{
-                fontFamily: "Cal Sans",
-                fontStyle: "italic",
-              }}
-            >
-              Mindenkié
-            </p>
-            <div tw="flex-grow ml-12 h-[2px] bg-gray-400"></div>
-          </div>
-          <div tw="flex flex-col flex-1 py-10">
-            <div
-              tw="flex text-xl font-bold tracking-tight text-white"
-              style={{ fontFamily: "Inter", fontWeight: "normal" }}
-            >
-              <span tw="uppercase">{values.type}</span>
-              <span>{`- Publicado el ${values.published}`}</span>
+            <div tw="flex items-center w-full">
+              <p
+                tw="text-3xl font-extrabold uppercase text-white"
+                style={{
+                  fontFamily: "Cal Sans",
+                  fontStyle: "italic",
+                }}
+              >
+                Mindenkié
+              </p>
+              <div tw="flex-grow ml-12 h-[2px] bg-gray-400"></div>
             </div>
+            <div tw="flex flex-col flex-1 py-10">
+              <div
+                tw="flex text-xl font-bold tracking-tight text-white"
+                style={{ fontFamily: "Inter", fontWeight: "normal" }}
+              >
+                <span tw="uppercase">{values.type}</span>
+                <span>{`- Publicado el ${values.published}`}</span>
+              </div>
 
-            <div
-              tw="flex flex-grow items-center leading-[1.1] text-[80px] font-bold text-white"
-              style={{
-                fontFamily: "Cal Sans",
-                fontWeight: "bold",
-                marginLeft: "-3px",
-                fontSize,
-              }}
-            >
-   
-               {heading} 
+              <div
+                tw="flex flex-grow items-center leading-[1.1] text-[80px] font-bold text-white"
+                style={{
+                  fontFamily: "Cal Sans",
+                  fontWeight: "bold",
+                  marginLeft: "-3px",
+                  fontSize,
+                }}
+              >
+
+                {heading}
+              </div>
             </div>
-          </div>
-          <div tw="flex items-center w-full justify-between">
-            <div
-              tw="flex text-xl bg-[#35a1f4] text-gray-900 px-4 py-2 rounded-xl"
-              style={{ fontFamily: "Cal Sans", fontWeight: "normal" }}
-            >
-              mindenkie.vercel.app
+            <div tw="flex items-center w-full justify-between">
+              <div
+                tw="flex text-xl bg-[#35a1f4] text-gray-900 px-4 py-2 rounded-xl"
+                style={{ fontFamily: "Cal Sans", fontWeight: "normal" }}
+              >
+                mindenkie.vercel.app
+              </div>
+              <div
+                tw="flex items-center text-xl text-white font-bold"
+                style={{
+                  fontFamily: "Cal Sans",
+                  fontWeight: "bold",
+                  display: "flex",
+                }}
+              >
+                <span>Para tod@s- </span>
+                <Baseline />
+                <p>{`${currentYear} © `}</p>
+              </div>
             </div>
-            <div
-              tw="flex items-center text-xl text-white font-bold"
-              style={{
-                fontFamily: "Cal Sans",
-                fontWeight: "bold",
-                display: "flex",
-              }}
-            >
-              <span>Para tod@s- </span>
-              <Baseline />
-              <p>{`${currentYear} © `}</p>
-            </div>
-          </div>
           </div>
         </div>
       ),
