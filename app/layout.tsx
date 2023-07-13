@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     },
   ],
   creator: "maxiCalderónBuono",
+
   openGraph: {
     title: "Mindenkié",
     description:
