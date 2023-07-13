@@ -163,7 +163,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           Publicado el <DateLabel>{sys.createdAt}</DateLabel>
         </time>
       )}
-      <h1 className="inline-block mt-2 text-4xl leading-tight lg:text-5xl">
+      <h1 className="inline-block mt-2 text-4xl leading-tight font-heading lg:text-5xl">
         {fields.title}
       </h1>
       <div className="flex items-center gap-3 mt-3 mb-5">
