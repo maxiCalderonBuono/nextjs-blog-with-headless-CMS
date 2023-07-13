@@ -5,11 +5,11 @@ import { NextRequest } from "next/server";
 export const runtime = "edge";
 
 const interRegular = fetch(
-  new URL("../../../assets/fonts/Inter-Regular.ttf", import.meta.url)
+  new URL("../../../assets/fonts/Inter-Regular.woff2", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 const interBold = fetch(
-  new URL("../../../assets/fonts/CalSans-SemiBold.ttf", import.meta.url)
+  new URL("../../../assets/fonts/CalSans-SemiBold.woff2", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
 export async function GET(req: NextRequest) {
