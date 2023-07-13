@@ -41,7 +41,7 @@ const Home = ({ data }: HompeProps) => {
       <div className="hidden md:block">
         <Tabs posts={data} />
       </div>
-      <Grid posts={matches} />
+      <Grid posts={matches.slice(0,4)} />
       <h2 className="text-3xl font-bold uppercase md:text-4xl">
         Recientes
       </h2>
