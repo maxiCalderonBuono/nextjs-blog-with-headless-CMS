@@ -45,7 +45,7 @@ const Home = ({ data }: HompeProps) => {
       <h2 className="text-3xl font-bold uppercase md:text-4xl">
         Recientes
       </h2>
-      <PostList posts={matches} navigation={true} />
+      <PostList posts={matches.slice(0,10)} navigation={true} />
     </div>
   )
 };
