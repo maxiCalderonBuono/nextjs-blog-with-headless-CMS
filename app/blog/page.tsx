@@ -5,6 +5,7 @@ import { client } from "~/lib/contentful/client";
 
 export const metadata: Metadata = {
   title: "Blog",
+  alternates: { canonical: "https://www.mindenkie.com/blog" },
 };
 
 
