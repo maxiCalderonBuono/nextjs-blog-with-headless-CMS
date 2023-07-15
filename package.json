@@ -41,6 +41,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2"
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "tailwindcss-animated": "^1.0.1"
   }
 }

@@ -192,16 +192,22 @@ module.exports = {
         heading: ["var(--font-heading)", ...fontFamily.sans],
         typo:["var(--font-jost)", ...fontFamily.sans],
       },
-      animation: {
-        toggle: "toggle 3s ease-in-out",
+       animation: {
+        'wiggle': 'wave 2s linear infinite',
       },
-      keyframes: {
-        toggle: {
-          "0%": { transform: "rotate(0deg)", opacity: "100%" },
-          "100%": { transform: "rotate(100deg)", opacity: "0%" },
+        keyframes: {
+        wave: {
+          '0%': { transform: 'rotate(0.0deg)' },
+          '10%': { transform: 'rotate(14deg)' },
+          '20%': { transform: 'rotate(-8deg)' },
+          '30%': { transform: 'rotate(10deg)' },
+          '40%': { transform: 'rotate(-4deg)' },
+          '50%': { transform: 'rotate(8.0deg)' },
+          '60%': { transform: 'rotate(0.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
         },
       },
     },
   },
-  plugins: [require("@tailwindcss/typography", '@tailwindcss/aspect-ratio')],
+  plugins: [require("@tailwindcss/typography", '@tailwindcss/aspect-ratio','tailwindcss-animated')],
 };

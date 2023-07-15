@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 import ViewCounter from "./view-counter";
 import getViewsCount from "~/lib/getViewsCount";
 import DateLabel from "~/components/UI/DateLabel";
+import LikeButton from "~/components/LikeButton";
 
 
 
@@ -184,7 +185,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
         </div>
         <ViewCounter total={total} slug={slug} />
-        {/* <LikeButton slug={slug} /> */}
+        <LikeButton />
       </div>
       {fields.image && (
         <div className="relative aspect-video">
