@@ -206,6 +206,32 @@ module.exports = {
           '60%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+          emoji: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(0) scale(0)",
+          },
+          "50%": {
+            opacity: "1",
+            transform: "translateY(-40px) scale(1)",
+          },
+          to: {
+            opacity: "0",
+            transform: "translateY(-60px) scale(1.4)",
+          },
+        },
+        loading: {
+          "0%": {
+            opacity: ".2",
+          },
+          "20%": {
+            opacity: "1",
+            transform: "translateX(1px)",
+          },
+          to: {
+            opacity: ".2",
+          },
+        },
       },
     },
   },

@@ -1,4 +1,3 @@
-
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,16 +15,20 @@ import getViewsCount from "~/lib/getViewsCount";
 import DateLabel from "~/components/UI/DateLabel";
 import LikeButton from "~/components/LikeButton";
 
-
-
-
-
-
-
-
 interface PostPageProps {
   params: {
     slug: string;
+  };
+}
+
+interface Personal {
+  name: string;
+  profilePic: {
+    fields: {
+      file: {
+        url: string;
+      };
+    };
   };
 }
 
@@ -34,16 +37,14 @@ export async function generateMetadata({
 }: PostPageProps): Promise<Metadata> {
   const slug = params.slug;
 
-  const { items } = await client.getEntries({
+  const { items: posts } = await client.getEntries({
     content_type: "blog",
     "fields.slug": slug,
   });
 
+  if (posts.length === 0) return {};
 
-  if (items.length === 0) return {}
-
-  const { fields, sys } = items[0];
-
+  const { fields, sys } = posts[0];
 
   const url = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -59,7 +60,7 @@ export async function generateMetadata({
     timeZone: "UTC",
   });
 
-  const imageUrl = fields.image.fields.file.url
+  const imageUrl = fields.image.fields.file.url;
 
   ogUrl.searchParams.set("heading", fields.title);
   ogUrl.searchParams.set("type", "Blog Post");
@@ -104,7 +105,6 @@ const options = {
     },
     [BLOCKS.EMBEDDED_ASSET]: (node: Node, children: React.ReactNode) => {
       return (
-
         <div>
           <Image
             alt={node.data.target.fields.file.details.title}
@@ -124,32 +124,28 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const url = process.env.NEXT_PUBLIC_APP_URL;
 
-
-
-  const { total } = await getViewsCount(slug)
+  const { total } = await getViewsCount(slug);
 
   const { items } = await client.getEntries({
     content_type: "blog",
     "fields.slug": slug,
   });
 
+  const { items: author } = await client.getEntries({
+    content_type: "author",
+  });
 
   if (items.length === 0) {
-    notFound()
+    notFound();
   }
 
-
-
   const { fields, sys } = items[0];
+  const { fields: personal }: { fields: Personal } = author[0];
 
-
+  console.log(personal.profilePic);
 
   return (
-
-
     <article className="relative w-full max-w-3xl px-6 py-10 mx-auto bg-pattern">
-
-
       <Link
         href="/blog"
         className="absolute  left-[-200px] top-14 hidden xl:inline-flex dark:hover:bg-gray-800 hover:bg-gray-200 px-4 py-2  rounded-md focus-visible:outline-indigo-500 focus-visible:outline focus-visible:outline-2"
@@ -157,7 +153,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <ChevronLeft className="flex items-center" />
         Todos los posts
       </Link>
-
 
       {sys.createdAt && (
         <time dateTime={sys.createdAt} className="block text-sm opacity-60">
@@ -171,21 +166,21 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <div className="flex items-center space-x-2 text-md">
           <div className="relative overflow-hidden rounded-full h-11 w-11">
             <Image
-              src={profile}
+              src={`http:${personal.profilePic.fields.file.url}`}
               alt="El escritor de Mindenkié"
               quality={75}
-              width={44}
-              height={44}
+              width={255}
+              height={255}
               priority
               className="bg-indigo-300"
             />
           </div>
           <div className="flex-1 leading-tight text-left">
-            <p className="font-bold">Sultano</p>
+            <p className="font-bold">{personal.name}</p>
           </div>
         </div>
         <ViewCounter total={total} slug={slug} />
-        <LikeButton />
+        {/* <LikeButton slug={slug} /> //TODO - add like button */}
       </div>
       {fields.image && (
         <div className="relative aspect-video">
@@ -196,7 +191,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
             priority
             sizes="(max-width:640px) 340px, (max-width:767px) 640px, 33vw"
             className="object-cover rounded-lg"
-          /></div>
+          />
+        </div>
       )}
 
       <p className="p-4 my-6 font-semibold border border-l-4 border-gray-400 rounded-md">
@@ -217,9 +213,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
           Todos los posts
         </Link>
       </div>
-
     </article>
-
-
   );
 }
