@@ -43,7 +43,6 @@
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "encoding": "^0.1.13",
     "tailwindcss-animated": "^1.0.1"
   }
 }
