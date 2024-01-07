@@ -22,6 +22,8 @@ const LikeButton = ({ slug }: { slug: string }) => {
 
   const { currentUserLikes, likes, isLoading, increment } = usePostLikes(slug);
 
+  console.log({ currentUserLikes });
+
   const [animatedEmojis, setAnimatedEmojis] = useState<string[]>(
     currentUserLikes ? [emojis[currentUserLikes]] : []
   );

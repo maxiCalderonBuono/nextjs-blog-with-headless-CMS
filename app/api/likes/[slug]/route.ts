@@ -132,7 +132,7 @@ export async function POST(
       updatedUserLikes = newCount.userLikes
       await supabase
         .from("session")
-        .insert({ id: sessionId, userLikes: newCount })
+        .insert({ id: sessionId, userLikes: updatedUserLikes })
     }
 
 
@@ -156,7 +156,7 @@ export async function POST(
       updatedPostLikes = newCount.postLikes
       await supabase
         .from("views")
-        .insert({ slug: checkedSlug, postLikes: newCount })
+        .insert({ slug: checkedSlug, postLikes: updatedPostLikes })
     }
 
 
