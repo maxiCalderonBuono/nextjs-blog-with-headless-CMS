@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/Server";
+import { NextRequest, NextResponse } from "next/server";
 import { createHash } from "crypto";
 import { z } from "zod";
 import { supabase } from "../../../../lib/supabaseClient";
