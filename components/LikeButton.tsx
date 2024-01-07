@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useReward } from "react-rewards";
 import { usePostLikes } from "~/lib/usePostLikes";
 import { LoadingDots } from "./LoadingDots";
+import { useDebounce } from "react-use";
 
 const emojis = ["👍", "🙏", "😃", "✌️"];
 
@@ -21,15 +22,15 @@ const LikeButton = ({ slug }: { slug: string }) => {
 
   const { currentUserLikes, likes, isLoading, increment } = usePostLikes(slug);
 
-  console.log(currentUserLikes);
-
   const [animatedEmojis, setAnimatedEmojis] = useState<string[]>(
     currentUserLikes ? [emojis[currentUserLikes]] : []
   );
 
   const handleClick = async () => {
+    if (currentUserLikes >= 5) {
+      return;
+    }
     increment();
-
     if (currentUserLikes) {
       if (currentUserLikes < 4) {
         setAnimatedEmojis([...animatedEmojis, emojis[currentUserLikes]]);
@@ -58,7 +59,6 @@ const LikeButton = ({ slug }: { slug: string }) => {
         className="relative flex items-center justify-center w-8 h-8 p-2 overflow-hidden rounded-lg active:scale-95 hover:scale-110"
         aria-label="Dar me gusta al post"
         onClick={() => handleClick()}
-        disabled={currentUserLikes === 5}
       >
         <div className="relative">
           <div

@@ -142,8 +142,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { fields, sys } = items[0];
   const { fields: personal }: { fields: Personal } = author[0];
 
-  console.log(personal.profilePic);
-
   return (
     <article className="relative w-full max-w-3xl px-6 py-10 mx-auto bg-pattern">
       <Link
@@ -180,7 +178,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           </div>
         </div>
         <ViewCounter total={total} slug={slug} />
-        {/* <LikeButton slug={slug} /> //TODO - add like button */}
+        <LikeButton slug={slug} />
       </div>
       {fields.image && (
         <div className="relative aspect-video">

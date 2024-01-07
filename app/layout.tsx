@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 import MainNavBar from "~/components/MainNavBar";
 import localFont from "next/font/local";
 import ThemeProvider from "~/components/ThemeProvider";
 import SiteFooter from "~/components/SiteFooter";
 import { FiltersProvider } from "~/components/filter";
-
 
 const inter = localFont({
   src: "../assets/fonts/Inter-Regular.woff2",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   ],
   creator: "maxiCalderónBuono",
   icons: {
-    shortcut: '../favicon.ico',
+    shortcut: "../favicon.ico",
   },
   openGraph: {
     title: "Mindenkié",
@@ -81,8 +81,6 @@ export const metadata: Metadata = {
     title: "Mindenkié",
     card: "summary_large_image",
   },
-
-
 };
 
 export default async function RootLayout({
@@ -91,7 +89,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${jost.variable} ${fontHeading.variable}`}>
+    <html
+      lang="es"
+      className={`${inter.variable} ${jost.variable} ${fontHeading.variable}`}
+    >
       <body className="flex flex-col min-h-screen dark:bg-gray-900">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FiltersProvider>
