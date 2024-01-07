@@ -93,7 +93,7 @@ export default async function RootLayout({
       lang="es"
       className={`${inter.variable} ${jost.variable} ${fontHeading.variable}`}
     >
-      <body className="flex flex-col min-h-screen dark:bg-gray-900">
+      <body className="flex flex-col min-h-screen dark:bg-[#151a36]">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <FiltersProvider>
             {/* @ts-expect-error Server Component */}
